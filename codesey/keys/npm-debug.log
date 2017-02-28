@@ -1,0 +1,738 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Users\\adm\\Downloads\\node.js-html-1\\node.js-html-1\\node.exe',
+1 verbose cli   'C:\\Users\\adm\\Downloads\\node.js-html-1\\node.js-html-1\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.9.5
+3 info using node@v6.2.2
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchOtherPackageData bitcore-build@github:bitcoremgv/bitcore-build
+20 silly cache add args [ 'bitcore-build@github:bitcoremgv/bitcore-build', null ]
+21 verbose cache add spec bitcore-build@github:bitcoremgv/bitcore-build
+22 silly fetchNamedPackageData brfs
+23 silly mapToRegistry name brfs
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'brfs',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'brfs',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/brfs
+28 silly fetchNamedPackageData chai
+29 silly mapToRegistry name chai
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry data Result {
+32 silly mapToRegistry   raw: 'chai',
+32 silly mapToRegistry   scope: null,
+32 silly mapToRegistry   name: 'chai',
+32 silly mapToRegistry   rawSpec: '',
+32 silly mapToRegistry   spec: 'latest',
+32 silly mapToRegistry   type: 'tag' }
+33 silly mapToRegistry uri https://registry.npmjs.org/chai
+34 silly fetchNamedPackageData gulp
+35 silly mapToRegistry name gulp
+36 silly mapToRegistry using default registry
+37 silly mapToRegistry registry https://registry.npmjs.org/
+38 silly mapToRegistry data Result {
+38 silly mapToRegistry   raw: 'gulp',
+38 silly mapToRegistry   scope: null,
+38 silly mapToRegistry   name: 'gulp',
+38 silly mapToRegistry   rawSpec: '',
+38 silly mapToRegistry   spec: 'latest',
+38 silly mapToRegistry   type: 'tag' }
+39 silly mapToRegistry uri https://registry.npmjs.org/gulp
+40 silly fetchNamedPackageData sinon
+41 silly mapToRegistry name sinon
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry data Result {
+44 silly mapToRegistry   raw: 'sinon',
+44 silly mapToRegistry   scope: null,
+44 silly mapToRegistry   name: 'sinon',
+44 silly mapToRegistry   rawSpec: '',
+44 silly mapToRegistry   spec: 'latest',
+44 silly mapToRegistry   type: 'tag' }
+45 silly mapToRegistry uri https://registry.npmjs.org/sinon
+46 silly cache add parsed spec Result {
+46 silly cache add   raw: 'bitcore-build@github:bitcoremgv/bitcore-build',
+46 silly cache add   scope: null,
+46 silly cache add   name: 'bitcore-build',
+46 silly cache add   rawSpec: 'github:bitcoremgv/bitcore-build',
+46 silly cache add   spec: 'github:bitcoremgv/bitcore-build',
+46 silly cache add   type: 'hosted',
+46 silly cache add   hosted:
+46 silly cache add    { type: 'github',
+46 silly cache add      ssh: 'git@github.com:bitcoremgv/bitcore-build.git',
+46 silly cache add      sshUrl: 'git+ssh://git@github.com/bitcoremgv/bitcore-build.git',
+46 silly cache add      httpsUrl: 'git+https://github.com/bitcoremgv/bitcore-build.git',
+46 silly cache add      gitUrl: 'git://github.com/bitcoremgv/bitcore-build.git',
+46 silly cache add      shortcut: 'github:bitcoremgv/bitcore-build',
+46 silly cache add      directUrl: 'https://raw.githubusercontent.com/bitcoremgv/bitcore-build/master/package.json' } }
+47 verbose addRemoteGit caching github:bitcoremgv/bitcore-build
+48 verbose addRemoteGit bitcoremgv/bitcore-build is a repository hosted by github
+49 silly tryGitProto attempting to clone git://github.com/bitcoremgv/bitcore-build.git
+50 silly tryClone cloning bitcoremgv/bitcore-build via git://github.com/bitcoremgv/bitcore-build.git
+51 verbose tryClone git-github-com-bitcoremgv-bitcore-build-git-9c77c360 not in flight; caching
+52 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+53 verbose request uri https://registry.npmjs.org/brfs
+54 verbose request no auth needed
+55 info attempt registry request try #1 at 03:34:48
+56 verbose request id 58119a4e42a1c5c3
+57 verbose etag W/"58acd63d-879e"
+58 verbose lastModified Wed, 22 Feb 2017 00:07:25 GMT
+59 http request GET https://registry.npmjs.org/brfs
+60 verbose request uri https://registry.npmjs.org/sinon
+61 verbose request no auth needed
+62 info attempt registry request try #1 at 03:34:48
+63 verbose etag W/"588817b5-41035"
+64 verbose lastModified Wed, 25 Jan 2017 03:12:53 GMT
+65 http request GET https://registry.npmjs.org/sinon
+66 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+67 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+68 verbose request uri https://registry.npmjs.org/gulp
+69 verbose request no auth needed
+70 info attempt registry request try #1 at 03:34:48
+71 verbose etag W/"58b11fd2-1ce6b"
+72 verbose lastModified Sat, 25 Feb 2017 06:10:26 GMT
+73 http request GET https://registry.npmjs.org/gulp
+74 verbose request uri https://registry.npmjs.org/chai
+75 verbose request no auth needed
+76 info attempt registry request try #1 at 03:34:48
+77 verbose etag W/"58abbd69-165c2"
+78 verbose lastModified Tue, 21 Feb 2017 04:09:13 GMT
+79 http request GET https://registry.npmjs.org/chai
+80 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+81 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+82 info git [ 'config', '--get', 'remote.origin.url' ]
+83 silly validateExistingRemote bitcoremgv/bitcore-build remote.origin.url: git://github.com/bitcoremgv/bitcore-build.git
+84 verbose validateExistingRemote bitcoremgv/bitcore-build is updating existing cached remote C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-9c77c360
+85 info git [ 'fetch', '-a', 'origin' ]
+86 error git fetch -a origin (git://github.com/bitcoremgv/bitcore-build.git) fatal: Unable to look up github.com (port 9418) (H�te inconnu. )
+87 silly tryHTTPS attempting to clone git+https://github.com/bitcoremgv/bitcore-build.git
+88 silly tryClone cloning bitcoremgv/bitcore-build via git+https://github.com/bitcoremgv/bitcore-build.git
+89 verbose tryClone git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e not in flight; caching
+90 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+91 info git [ 'config', '--get', 'remote.origin.url' ]
+92 warn addRemoteGit Error: Command failed: git -c core.longpaths=true config --get remote.origin.url
+92 warn addRemoteGit
+92 warn addRemoteGit     at ChildProcess.exithandler (child_process.js:207:12)
+92 warn addRemoteGit     at emitTwo (events.js:106:13)
+92 warn addRemoteGit     at ChildProcess.emit (events.js:191:7)
+92 warn addRemoteGit     at maybeClose (internal/child_process.js:852:16)
+92 warn addRemoteGit     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+92 warn addRemoteGit  bitcoremgv/bitcore-build resetting remote C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e because of error: { Error: Command failed: git -c core.longpaths=true config --get remote.origin.url
+92 warn addRemoteGit
+92 warn addRemoteGit     at ChildProcess.exithandler (child_process.js:207:12)
+92 warn addRemoteGit     at emitTwo (events.js:106:13)
+92 warn addRemoteGit     at ChildProcess.emit (events.js:191:7)
+92 warn addRemoteGit     at maybeClose (internal/child_process.js:852:16)
+92 warn addRemoteGit     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+92 warn addRemoteGit   killed: false,
+92 warn addRemoteGit   code: 1,
+92 warn addRemoteGit   signal: null,
+92 warn addRemoteGit   cmd: 'git -c core.longpaths=true config --get remote.origin.url' }
+93 info resetRemote resetting C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e for bitcoremgv/bitcore-build
+94 silly gentlyRm C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e is being purged
+95 verbose gentlyRm don't care about contents; nuking C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e
+96 silly vacuum-fs purging C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e
+97 silly vacuum-fs quitting because other entries in C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes
+98 info git [ 'clone',
+98 info git   '--template=C:\\Users\\adm\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates',
+98 info git   '--mirror',
+98 info git   'https://github.com/bitcoremgv/bitcore-build.git',
+98 info git   'C:\\Users\\adm\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e' ]
+99 error git clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror https://github.com/bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e: Cloning into bare repository 'C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e'...
+99 error git clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror https://github.com/bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-https-github-com-bitcoremgv-bitcore-build-git-8d2ef79e: fatal: unable to access 'https://github.com/bitcoremgv/bitcore-build.git/': Couldn't resolve host 'github.com'
+100 silly trySSH attempting to clone git@github.com:bitcoremgv/bitcore-build.git
+101 silly tryClone cloning bitcoremgv/bitcore-build via git@github.com:bitcoremgv/bitcore-build.git
+102 verbose tryClone git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d not in flight; caching
+103 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+104 info git [ 'config', '--get', 'remote.origin.url' ]
+105 warn addRemoteGit Error: Command failed: git -c core.longpaths=true config --get remote.origin.url
+105 warn addRemoteGit
+105 warn addRemoteGit     at ChildProcess.exithandler (child_process.js:207:12)
+105 warn addRemoteGit     at emitTwo (events.js:106:13)
+105 warn addRemoteGit     at ChildProcess.emit (events.js:191:7)
+105 warn addRemoteGit     at maybeClose (internal/child_process.js:852:16)
+105 warn addRemoteGit     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+105 warn addRemoteGit  bitcoremgv/bitcore-build resetting remote C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d because of error: { Error: Command failed: git -c core.longpaths=true config --get remote.origin.url
+105 warn addRemoteGit
+105 warn addRemoteGit     at ChildProcess.exithandler (child_process.js:207:12)
+105 warn addRemoteGit     at emitTwo (events.js:106:13)
+105 warn addRemoteGit     at ChildProcess.emit (events.js:191:7)
+105 warn addRemoteGit     at maybeClose (internal/child_process.js:852:16)
+105 warn addRemoteGit     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+105 warn addRemoteGit   killed: false,
+105 warn addRemoteGit   code: 1,
+105 warn addRemoteGit   signal: null,
+105 warn addRemoteGit   cmd: 'git -c core.longpaths=true config --get remote.origin.url' }
+106 info resetRemote resetting C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d for bitcoremgv/bitcore-build
+107 silly gentlyRm C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d is being purged
+108 verbose gentlyRm don't care about contents; nuking C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d
+109 silly vacuum-fs purging C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d
+110 silly vacuum-fs quitting because other entries in C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes
+111 info git [ 'clone',
+111 info git   '--template=C:\\Users\\adm\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates',
+111 info git   '--mirror',
+111 info git   'git@github.com:bitcoremgv/bitcore-build.git',
+111 info git   'C:\\Users\\adm\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d' ]
+112 error git clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d: Cloning into bare repository 'C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d'...
+112 error git clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d: ssh: Could not resolve hostname github.com: Name or service not known
+112 error git clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d: fatal: Could not read from remote repository.
+112 error git clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d:
+112 error git clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d: Please make sure you have the correct access rights
+112 error git clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d: and the repository exists.
+113 silly fetchPackageMetaData Error: Command failed: git -c core.longpaths=true clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d
+113 silly fetchPackageMetaData Cloning into bare repository 'C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d'...
+113 silly fetchPackageMetaData ssh: Could not resolve hostname github.com: Name or service not known
+113 silly fetchPackageMetaData fatal: Could not read from remote repository.
+113 silly fetchPackageMetaData
+113 silly fetchPackageMetaData Please make sure you have the correct access rights
+113 silly fetchPackageMetaData and the repository exists.
+113 silly fetchPackageMetaData
+113 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:207:12)
+113 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+113 silly fetchPackageMetaData     at ChildProcess.emit (events.js:191:7)
+113 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:852:16)
+113 silly fetchPackageMetaData     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+113 silly fetchPackageMetaData  error for bitcore-build@github:bitcoremgv/bitcore-build { Error: Command failed: git -c core.longpaths=true clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d
+113 silly fetchPackageMetaData Cloning into bare repository 'C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d'...
+113 silly fetchPackageMetaData ssh: Could not resolve hostname github.com: Name or service not known
+113 silly fetchPackageMetaData fatal: Could not read from remote repository.
+113 silly fetchPackageMetaData
+113 silly fetchPackageMetaData Please make sure you have the correct access rights
+113 silly fetchPackageMetaData and the repository exists.
+113 silly fetchPackageMetaData
+113 silly fetchPackageMetaData     at ChildProcess.exithandler (child_process.js:207:12)
+113 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
+113 silly fetchPackageMetaData     at ChildProcess.emit (events.js:191:7)
+113 silly fetchPackageMetaData     at maybeClose (internal/child_process.js:852:16)
+113 silly fetchPackageMetaData     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+113 silly fetchPackageMetaData   killed: false,
+113 silly fetchPackageMetaData   code: 128,
+113 silly fetchPackageMetaData   signal: null,
+113 silly fetchPackageMetaData   cmd: 'git -c core.longpaths=true clone --template=C:\\Users\\adm\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\\Users\\adm\\AppData\\Roaming\\npm-cache\\_git-remotes\\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d' }
+114 info attempt registry request try #2 at 03:39:07
+115 verbose etag W/"58acd63d-879e"
+116 verbose lastModified Wed, 22 Feb 2017 00:07:25 GMT
+117 http request GET https://registry.npmjs.org/brfs
+118 info attempt registry request try #2 at 03:39:07
+119 verbose etag W/"588817b5-41035"
+120 verbose lastModified Wed, 25 Jan 2017 03:12:53 GMT
+121 http request GET https://registry.npmjs.org/sinon
+122 info attempt registry request try #2 at 03:39:07
+123 verbose etag W/"58b11fd2-1ce6b"
+124 verbose lastModified Sat, 25 Feb 2017 06:10:26 GMT
+125 http request GET https://registry.npmjs.org/gulp
+126 info attempt registry request try #2 at 03:39:07
+127 verbose etag W/"58abbd69-165c2"
+128 verbose lastModified Tue, 21 Feb 2017 04:09:13 GMT
+129 http request GET https://registry.npmjs.org/chai
+130 http 304 https://registry.npmjs.org/chai
+131 verbose headers { date: 'Sun, 26 Feb 2017 08:39:12 GMT',
+131 verbose headers   via: '1.1 varnish',
+131 verbose headers   'cache-control': 'max-age=300',
+131 verbose headers   etag: 'W/"58abbd69-165c2"',
+131 verbose headers   age: '0',
+131 verbose headers   connection: 'keep-alive',
+131 verbose headers   'x-served-by': 'cache-yul8923-YUL',
+131 verbose headers   'x-cache': 'HIT',
+131 verbose headers   'x-cache-hits': '1',
+131 verbose headers   'x-timer': 'S1488098352.178439,VS0,VE360',
+131 verbose headers   vary: 'Accept-Encoding' }
+132 silly get cb [ 304,
+132 silly get   { date: 'Sun, 26 Feb 2017 08:39:12 GMT',
+132 silly get     via: '1.1 varnish',
+132 silly get     'cache-control': 'max-age=300',
+132 silly get     etag: 'W/"58abbd69-165c2"',
+132 silly get     age: '0',
+132 silly get     connection: 'keep-alive',
+132 silly get     'x-served-by': 'cache-yul8923-YUL',
+132 silly get     'x-cache': 'HIT',
+132 silly get     'x-cache-hits': '1',
+132 silly get     'x-timer': 'S1488098352.178439,VS0,VE360',
+132 silly get     vary: 'Accept-Encoding' } ]
+133 verbose etag https://registry.npmjs.org/chai from cache
+134 verbose get saving chai to C:\Users\adm\AppData\Roaming\npm-cache\registry.npmjs.org\chai\.cache.json
+135 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+136 http 304 https://registry.npmjs.org/brfs
+137 verbose headers { date: 'Sun, 26 Feb 2017 08:39:12 GMT',
+137 verbose headers   via: '1.1 varnish',
+137 verbose headers   'cache-control': 'max-age=300',
+137 verbose headers   etag: 'W/"58acd63d-879e"',
+137 verbose headers   age: '0',
+137 verbose headers   connection: 'keep-alive',
+137 verbose headers   'x-served-by': 'cache-yul8921-YUL',
+137 verbose headers   'x-cache': 'MISS',
+137 verbose headers   'x-cache-hits': '0',
+137 verbose headers   'x-timer': 'S1488098352.178381,VS0,VE368',
+137 verbose headers   vary: 'Accept-Encoding' }
+138 silly get cb [ 304,
+138 silly get   { date: 'Sun, 26 Feb 2017 08:39:12 GMT',
+138 silly get     via: '1.1 varnish',
+138 silly get     'cache-control': 'max-age=300',
+138 silly get     etag: 'W/"58acd63d-879e"',
+138 silly get     age: '0',
+138 silly get     connection: 'keep-alive',
+138 silly get     'x-served-by': 'cache-yul8921-YUL',
+138 silly get     'x-cache': 'MISS',
+138 silly get     'x-cache-hits': '0',
+138 silly get     'x-timer': 'S1488098352.178381,VS0,VE368',
+138 silly get     vary: 'Accept-Encoding' } ]
+139 verbose etag https://registry.npmjs.org/brfs from cache
+140 verbose get saving brfs to C:\Users\adm\AppData\Roaming\npm-cache\registry.npmjs.org\brfs\.cache.json
+141 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache correctMkdir already in flight; waiting
+142 http 304 https://registry.npmjs.org/gulp
+143 verbose headers { date: 'Sun, 26 Feb 2017 08:39:12 GMT',
+143 verbose headers   via: '1.1 varnish',
+143 verbose headers   'cache-control': 'max-age=300',
+143 verbose headers   etag: 'W/"58b11fd2-1ce6b"',
+143 verbose headers   age: '0',
+143 verbose headers   connection: 'keep-alive',
+143 verbose headers   'x-served-by': 'cache-yul8924-YUL',
+143 verbose headers   'x-cache': 'MISS',
+143 verbose headers   'x-cache-hits': '0',
+143 verbose headers   'x-timer': 'S1488098352.178559,VS0,VE373',
+143 verbose headers   vary: 'Accept-Encoding' }
+144 silly get cb [ 304,
+144 silly get   { date: 'Sun, 26 Feb 2017 08:39:12 GMT',
+144 silly get     via: '1.1 varnish',
+144 silly get     'cache-control': 'max-age=300',
+144 silly get     etag: 'W/"58b11fd2-1ce6b"',
+144 silly get     age: '0',
+144 silly get     connection: 'keep-alive',
+144 silly get     'x-served-by': 'cache-yul8924-YUL',
+144 silly get     'x-cache': 'MISS',
+144 silly get     'x-cache-hits': '0',
+144 silly get     'x-timer': 'S1488098352.178559,VS0,VE373',
+144 silly get     vary: 'Accept-Encoding' } ]
+145 verbose etag https://registry.npmjs.org/gulp from cache
+146 verbose get saving gulp to C:\Users\adm\AppData\Roaming\npm-cache\registry.npmjs.org\gulp\.cache.json
+147 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+148 silly resolveWithNewModule gulp@3.9.1 checking installable status
+149 silly cache add args [ 'gulp@^3.8.10', null ]
+150 verbose cache add spec gulp@^3.8.10
+151 silly cache add parsed spec Result {
+151 silly cache add   raw: 'gulp@^3.8.10',
+151 silly cache add   scope: null,
+151 silly cache add   name: 'gulp',
+151 silly cache add   rawSpec: '^3.8.10',
+151 silly cache add   spec: '>=3.8.10 <4.0.0',
+151 silly cache add   type: 'range' }
+152 silly addNamed gulp@>=3.8.10 <4.0.0
+153 verbose addNamed ">=3.8.10 <4.0.0" is a valid semver range for gulp
+154 silly addNameRange { name: 'gulp', range: '>=3.8.10 <4.0.0', hasData: false }
+155 silly mapToRegistry name gulp
+156 silly mapToRegistry using default registry
+157 silly mapToRegistry registry https://registry.npmjs.org/
+158 silly mapToRegistry data Result {
+158 silly mapToRegistry   raw: 'gulp',
+158 silly mapToRegistry   scope: null,
+158 silly mapToRegistry   name: 'gulp',
+158 silly mapToRegistry   rawSpec: '',
+158 silly mapToRegistry   spec: 'latest',
+158 silly mapToRegistry   type: 'tag' }
+159 silly mapToRegistry uri https://registry.npmjs.org/gulp
+160 verbose addNameRange registry:https://registry.npmjs.org/gulp not in flight; fetching
+161 verbose get https://registry.npmjs.org/gulp not expired, no request
+162 silly addNameRange number 2 { name: 'gulp', range: '>=3.8.10 <4.0.0', hasData: true }
+163 silly addNameRange versions [ 'gulp',
+163 silly addNameRange   [ '0.0.1',
+163 silly addNameRange     '0.0.2',
+163 silly addNameRange     '0.0.3',
+163 silly addNameRange     '0.0.4',
+163 silly addNameRange     '0.0.5',
+163 silly addNameRange     '0.0.7',
+163 silly addNameRange     '0.0.8',
+163 silly addNameRange     '0.0.9',
+163 silly addNameRange     '0.1.0',
+163 silly addNameRange     '0.2.0',
+163 silly addNameRange     '1.0.0',
+163 silly addNameRange     '1.1.0',
+163 silly addNameRange     '1.2.0',
+163 silly addNameRange     '1.2.1',
+163 silly addNameRange     '2.0.0',
+163 silly addNameRange     '2.0.1',
+163 silly addNameRange     '2.1.0',
+163 silly addNameRange     '2.2.0',
+163 silly addNameRange     '2.3.0',
+163 silly addNameRange     '2.4.0',
+163 silly addNameRange     '2.4.1',
+163 silly addNameRange     '2.6.0',
+163 silly addNameRange     '2.6.1',
+163 silly addNameRange     '2.7.0',
+163 silly addNameRange     '3.0.0',
+163 silly addNameRange     '3.1.1',
+163 silly addNameRange     '3.1.2',
+163 silly addNameRange     '3.1.3',
+163 silly addNameRange     '3.1.4',
+163 silly addNameRange     '3.2.0',
+163 silly addNameRange     '3.2.1',
+163 silly addNameRange     '3.2.2',
+163 silly addNameRange     '3.2.3',
+163 silly addNameRange     '3.2.4',
+163 silly addNameRange     '3.2.5',
+163 silly addNameRange     '3.3.0',
+163 silly addNameRange     '3.3.1',
+163 silly addNameRange     '3.3.2',
+163 silly addNameRange     '3.3.4',
+163 silly addNameRange     '3.4.0',
+163 silly addNameRange     '3.5.0',
+163 silly addNameRange     '3.5.1',
+163 silly addNameRange     '3.5.2',
+163 silly addNameRange     '3.5.5',
+163 silly addNameRange     '3.5.6',
+163 silly addNameRange     '3.6.0',
+163 silly addNameRange     '3.6.1',
+163 silly addNameRange     '3.6.2',
+163 silly addNameRange     '3.7.0',
+163 silly addNameRange     '3.8.0',
+163 silly addNameRange     '3.8.1',
+163 silly addNameRange     '3.8.2',
+163 silly addNameRange     '3.8.3',
+163 silly addNameRange     '3.8.4',
+163 silly addNameRange     '3.8.5',
+163 silly addNameRange     '3.8.6',
+163 silly addNameRange     '3.8.7',
+163 silly addNameRange     '3.8.8',
+163 silly addNameRange     '3.8.9',
+163 silly addNameRange     '3.8.10',
+163 silly addNameRange     '3.8.11',
+163 silly addNameRange     '3.9.0',
+163 silly addNameRange     '3.9.1' ] ]
+164 silly addNamed gulp@3.9.1
+165 verbose addNamed "3.9.1" is a plain semver version for gulp
+166 silly resolveWithNewModule chai@1.10.0 checking installable status
+167 silly cache add args [ 'chai@^1.10.0', null ]
+168 verbose cache add spec chai@^1.10.0
+169 silly cache add parsed spec Result {
+169 silly cache add   raw: 'chai@^1.10.0',
+169 silly cache add   scope: null,
+169 silly cache add   name: 'chai',
+169 silly cache add   rawSpec: '^1.10.0',
+169 silly cache add   spec: '>=1.10.0 <2.0.0',
+169 silly cache add   type: 'range' }
+170 silly addNamed chai@>=1.10.0 <2.0.0
+171 verbose addNamed ">=1.10.0 <2.0.0" is a valid semver range for chai
+172 silly addNameRange { name: 'chai', range: '>=1.10.0 <2.0.0', hasData: false }
+173 silly mapToRegistry name chai
+174 silly mapToRegistry using default registry
+175 silly mapToRegistry registry https://registry.npmjs.org/
+176 silly mapToRegistry data Result {
+176 silly mapToRegistry   raw: 'chai',
+176 silly mapToRegistry   scope: null,
+176 silly mapToRegistry   name: 'chai',
+176 silly mapToRegistry   rawSpec: '',
+176 silly mapToRegistry   spec: 'latest',
+176 silly mapToRegistry   type: 'tag' }
+177 silly mapToRegistry uri https://registry.npmjs.org/chai
+178 verbose addNameRange registry:https://registry.npmjs.org/chai not in flight; fetching
+179 silly resolveWithNewModule brfs@1.4.3 checking installable status
+180 silly cache add args [ 'brfs@^1.2.0', null ]
+181 verbose cache add spec brfs@^1.2.0
+182 silly cache add parsed spec Result {
+182 silly cache add   raw: 'brfs@^1.2.0',
+182 silly cache add   scope: null,
+182 silly cache add   name: 'brfs',
+182 silly cache add   rawSpec: '^1.2.0',
+182 silly cache add   spec: '>=1.2.0 <2.0.0',
+182 silly cache add   type: 'range' }
+183 silly addNamed brfs@>=1.2.0 <2.0.0
+184 verbose addNamed ">=1.2.0 <2.0.0" is a valid semver range for brfs
+185 silly addNameRange { name: 'brfs', range: '>=1.2.0 <2.0.0', hasData: false }
+186 silly mapToRegistry name brfs
+187 silly mapToRegistry using default registry
+188 silly mapToRegistry registry https://registry.npmjs.org/
+189 silly mapToRegistry data Result {
+189 silly mapToRegistry   raw: 'brfs',
+189 silly mapToRegistry   scope: null,
+189 silly mapToRegistry   name: 'brfs',
+189 silly mapToRegistry   rawSpec: '',
+189 silly mapToRegistry   spec: 'latest',
+189 silly mapToRegistry   type: 'tag' }
+190 silly mapToRegistry uri https://registry.npmjs.org/brfs
+191 verbose addNameRange registry:https://registry.npmjs.org/brfs not in flight; fetching
+192 verbose get https://registry.npmjs.org/brfs not expired, no request
+193 silly addNameRange number 2 { name: 'brfs', range: '>=1.2.0 <2.0.0', hasData: true }
+194 silly addNameRange versions [ 'brfs',
+194 silly addNameRange   [ '0.0.0',
+194 silly addNameRange     '0.0.1',
+194 silly addNameRange     '0.0.2',
+194 silly addNameRange     '0.0.3',
+194 silly addNameRange     '0.0.4',
+194 silly addNameRange     '0.0.5',
+194 silly addNameRange     '0.0.6',
+194 silly addNameRange     '0.0.7',
+194 silly addNameRange     '0.0.8',
+194 silly addNameRange     '0.0.9',
+194 silly addNameRange     '0.1.0',
+194 silly addNameRange     '0.2.0',
+194 silly addNameRange     '0.2.1',
+194 silly addNameRange     '0.2.2',
+194 silly addNameRange     '1.0.0',
+194 silly addNameRange     '1.0.1',
+194 silly addNameRange     '1.0.2',
+194 silly addNameRange     '1.1.0',
+194 silly addNameRange     '1.1.1',
+194 silly addNameRange     '1.1.2',
+194 silly addNameRange     '1.2.0',
+194 silly addNameRange     '1.3.0',
+194 silly addNameRange     '1.4.0',
+194 silly addNameRange     '1.4.1',
+194 silly addNameRange     '1.4.2',
+194 silly addNameRange     '1.4.3' ] ]
+195 silly addNamed brfs@1.4.3
+196 verbose addNamed "1.4.3" is a plain semver version for brfs
+197 verbose get https://registry.npmjs.org/chai not expired, no request
+198 silly addNameRange number 2 { name: 'chai', range: '>=1.10.0 <2.0.0', hasData: true }
+199 silly addNameRange versions [ 'chai',
+199 silly addNameRange   [ '0.0.1',
+199 silly addNameRange     '0.0.2',
+199 silly addNameRange     '0.1.0',
+199 silly addNameRange     '0.1.1',
+199 silly addNameRange     '0.1.2',
+199 silly addNameRange     '0.1.3',
+199 silly addNameRange     '0.1.4',
+199 silly addNameRange     '0.1.5',
+199 silly addNameRange     '0.1.6',
+199 silly addNameRange     '0.1.7',
+199 silly addNameRange     '0.2.0',
+199 silly addNameRange     '0.2.1',
+199 silly addNameRange     '0.2.2',
+199 silly addNameRange     '0.2.3',
+199 silly addNameRange     '0.2.4',
+199 silly addNameRange     '0.3.0',
+199 silly addNameRange     '0.3.1',
+199 silly addNameRange     '0.3.2',
+199 silly addNameRange     '0.3.3',
+199 silly addNameRange     '0.3.4',
+199 silly addNameRange     '0.4.0',
+199 silly addNameRange     '0.4.1',
+199 silly addNameRange     '0.4.2',
+199 silly addNameRange     '0.5.0',
+199 silly addNameRange     '0.5.1',
+199 silly addNameRange     '0.5.2',
+199 silly addNameRange     '0.5.3',
+199 silly addNameRange     '1.0.0',
+199 silly addNameRange     '1.0.1',
+199 silly addNameRange     '1.0.2',
+199 silly addNameRange     '1.0.3',
+199 silly addNameRange     '1.0.4',
+199 silly addNameRange     '1.1.0',
+199 silly addNameRange     '1.1.1',
+199 silly addNameRange     '1.2.0',
+199 silly addNameRange     '1.3.0',
+199 silly addNameRange     '1.4.0',
+199 silly addNameRange     '1.4.1',
+199 silly addNameRange     '1.4.2',
+199 silly addNameRange     '1.5.0',
+199 silly addNameRange     '1.6.0',
+199 silly addNameRange     '1.6.1',
+199 silly addNameRange     '1.7.0',
+199 silly addNameRange     '1.7.1',
+199 silly addNameRange     '1.7.2',
+199 silly addNameRange     '1.8.0',
+199 silly addNameRange     '1.8.1',
+199 silly addNameRange     '1.9.0',
+199 silly addNameRange     '1.9.1',
+199 silly addNameRange     '1.9.2',
+199 silly addNameRange     '1.10.0',
+199 silly addNameRange     '2.0.0',
+199 silly addNameRange     '2.1.0',
+199 silly addNameRange     '2.1.1',
+199 silly addNameRange     '2.1.2',
+199 silly addNameRange     '2.2.0',
+199 silly addNameRange     '2.3.0',
+199 silly addNameRange     '3.0.0',
+199 silly addNameRange     '3.1.0',
+199 silly addNameRange     '3.2.0',
+199 silly addNameRange     '3.3.0',
+199 silly addNameRange     '3.4.0',
+199 silly addNameRange     '3.4.1',
+199 silly addNameRange     '3.5.0',
+199 silly addNameRange     '4.0.0-canary.1' ] ]
+200 silly addNamed chai@1.10.0
+201 verbose addNamed "1.10.0" is a plain semver version for chai
+202 silly cache afterAdd gulp@3.9.1
+203 verbose afterAdd C:\Users\adm\AppData\Roaming\npm-cache\gulp\3.9.1\package\package.json not in flight; writing
+204 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+205 verbose afterAdd C:\Users\adm\AppData\Roaming\npm-cache\gulp\3.9.1\package\package.json written
+206 http 304 https://registry.npmjs.org/sinon
+207 verbose headers { date: 'Sun, 26 Feb 2017 08:39:12 GMT',
+207 verbose headers   via: '1.1 varnish',
+207 verbose headers   'cache-control': 'max-age=300',
+207 verbose headers   etag: 'W/"588817b5-41035"',
+207 verbose headers   age: '0',
+207 verbose headers   connection: 'keep-alive',
+207 verbose headers   'x-served-by': 'cache-yul8926-YUL',
+207 verbose headers   'x-cache': 'MISS',
+207 verbose headers   'x-cache-hits': '0',
+207 verbose headers   'x-timer': 'S1488098352.172638,VS0,VE456',
+207 verbose headers   vary: 'Accept-Encoding' }
+208 silly get cb [ 304,
+208 silly get   { date: 'Sun, 26 Feb 2017 08:39:12 GMT',
+208 silly get     via: '1.1 varnish',
+208 silly get     'cache-control': 'max-age=300',
+208 silly get     etag: 'W/"588817b5-41035"',
+208 silly get     age: '0',
+208 silly get     connection: 'keep-alive',
+208 silly get     'x-served-by': 'cache-yul8926-YUL',
+208 silly get     'x-cache': 'MISS',
+208 silly get     'x-cache-hits': '0',
+208 silly get     'x-timer': 'S1488098352.172638,VS0,VE456',
+208 silly get     vary: 'Accept-Encoding' } ]
+209 verbose etag https://registry.npmjs.org/sinon from cache
+210 verbose get saving sinon to C:\Users\adm\AppData\Roaming\npm-cache\registry.npmjs.org\sinon\.cache.json
+211 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+212 silly cache afterAdd chai@1.10.0
+213 verbose afterAdd C:\Users\adm\AppData\Roaming\npm-cache\chai\1.10.0\package\package.json not in flight; writing
+214 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+215 silly cache afterAdd brfs@1.4.3
+216 verbose afterAdd C:\Users\adm\AppData\Roaming\npm-cache\brfs\1.4.3\package\package.json not in flight; writing
+217 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+218 verbose afterAdd C:\Users\adm\AppData\Roaming\npm-cache\chai\1.10.0\package\package.json written
+219 verbose afterAdd C:\Users\adm\AppData\Roaming\npm-cache\brfs\1.4.3\package\package.json written
+220 silly resolveWithNewModule sinon@1.17.7 checking installable status
+221 silly cache add args [ 'sinon@^1.13.0', null ]
+222 verbose cache add spec sinon@^1.13.0
+223 silly cache add parsed spec Result {
+223 silly cache add   raw: 'sinon@^1.13.0',
+223 silly cache add   scope: null,
+223 silly cache add   name: 'sinon',
+223 silly cache add   rawSpec: '^1.13.0',
+223 silly cache add   spec: '>=1.13.0 <2.0.0',
+223 silly cache add   type: 'range' }
+224 silly addNamed sinon@>=1.13.0 <2.0.0
+225 verbose addNamed ">=1.13.0 <2.0.0" is a valid semver range for sinon
+226 silly addNameRange { name: 'sinon', range: '>=1.13.0 <2.0.0', hasData: false }
+227 silly mapToRegistry name sinon
+228 silly mapToRegistry using default registry
+229 silly mapToRegistry registry https://registry.npmjs.org/
+230 silly mapToRegistry data Result {
+230 silly mapToRegistry   raw: 'sinon',
+230 silly mapToRegistry   scope: null,
+230 silly mapToRegistry   name: 'sinon',
+230 silly mapToRegistry   rawSpec: '',
+230 silly mapToRegistry   spec: 'latest',
+230 silly mapToRegistry   type: 'tag' }
+231 silly mapToRegistry uri https://registry.npmjs.org/sinon
+232 verbose addNameRange registry:https://registry.npmjs.org/sinon not in flight; fetching
+233 verbose get https://registry.npmjs.org/sinon not expired, no request
+234 silly addNameRange number 2 { name: 'sinon', range: '>=1.13.0 <2.0.0', hasData: true }
+235 silly addNameRange versions [ 'sinon',
+235 silly addNameRange   [ '0.6.2',
+235 silly addNameRange     '0.6.3',
+235 silly addNameRange     '1.0.0',
+235 silly addNameRange     '1.0.1',
+235 silly addNameRange     '1.0.2',
+235 silly addNameRange     '1.1.0',
+235 silly addNameRange     '1.1.1',
+235 silly addNameRange     '1.2.0',
+235 silly addNameRange     '1.3.0',
+235 silly addNameRange     '1.3.1',
+235 silly addNameRange     '1.3.2',
+235 silly addNameRange     '1.3.3',
+235 silly addNameRange     '1.3.4',
+235 silly addNameRange     '1.4.0',
+235 silly addNameRange     '1.4.1',
+235 silly addNameRange     '1.4.2',
+235 silly addNameRange     '1.5.0',
+235 silly addNameRange     '1.5.2',
+235 silly addNameRange     '1.6.0',
+235 silly addNameRange     '1.7.0',
+235 silly addNameRange     '1.7.1',
+235 silly addNameRange     '1.7.2',
+235 silly addNameRange     '1.7.3',
+235 silly addNameRange     '1.8.1',
+235 silly addNameRange     '1.8.2',
+235 silly addNameRange     '1.9.0',
+235 silly addNameRange     '1.9.1',
+235 silly addNameRange     '1.10.0',
+235 silly addNameRange     '1.10.1',
+235 silly addNameRange     '1.10.2',
+235 silly addNameRange     '1.10.3',
+235 silly addNameRange     '1.11.0',
+235 silly addNameRange     '1.11.1',
+235 silly addNameRange     '1.12.0',
+235 silly addNameRange     '1.12.1',
+235 silly addNameRange     '1.12.2',
+235 silly addNameRange     '1.13.0',
+235 silly addNameRange     '1.14.0',
+235 silly addNameRange     '1.14.1',
+235 silly addNameRange     '1.15.0',
+235 silly addNameRange     '1.15.1',
+235 silly addNameRange     '1.15.2',
+235 silly addNameRange     '1.15.3',
+235 silly addNameRange     '1.15.4',
+235 silly addNameRange     '1.16.0',
+235 silly addNameRange     '1.16.1',
+235 silly addNameRange     '1.17.0',
+235 silly addNameRange     '1.17.1',
+235 silly addNameRange     '1.17.2',
+235 silly addNameRange     '2.0.0-pre',
+235 silly addNameRange     '1.17.3',
+235 silly addNameRange     '1.17.4',
+235 silly addNameRange     '2.0.0-pre.2',
+235 silly addNameRange     '1.17.5',
+235 silly addNameRange     '1.17.6',
+235 silly addNameRange     '2.0.0-pre.3',
+235 silly addNameRange     '2.0.0-pre.4',
+235 silly addNameRange     '2.0.0-pre.5',
+235 silly addNameRange     '1.17.7' ] ]
+236 silly addNamed sinon@1.17.7
+237 verbose addNamed "1.17.7" is a plain semver version for sinon
+238 silly cache afterAdd sinon@1.17.7
+239 verbose afterAdd C:\Users\adm\AppData\Roaming\npm-cache\sinon\1.17.7\package\package.json not in flight; writing
+240 verbose correctMkdir C:\Users\adm\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+241 verbose afterAdd C:\Users\adm\AppData\Roaming\npm-cache\sinon\1.17.7\package\package.json written
+242 silly rollbackFailedOptional Starting
+243 silly rollbackFailedOptional Finishing
+244 silly runTopLevelLifecycles Starting
+245 silly runTopLevelLifecycles Finishing
+246 silly install printInstalled
+247 verbose stack Error: Command failed: git -c core.longpaths=true clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d
+247 verbose stack Cloning into bare repository 'C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d'...
+247 verbose stack ssh: Could not resolve hostname github.com: Name or service not known
+247 verbose stack fatal: Could not read from remote repository.
+247 verbose stack
+247 verbose stack Please make sure you have the correct access rights
+247 verbose stack and the repository exists.
+247 verbose stack
+247 verbose stack     at ChildProcess.exithandler (child_process.js:207:12)
+247 verbose stack     at emitTwo (events.js:106:13)
+247 verbose stack     at ChildProcess.emit (events.js:191:7)
+247 verbose stack     at maybeClose (internal/child_process.js:852:16)
+247 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+248 verbose cwd C:\Users\adm\Documents\GitHub\bitcoremgv\bitcoremgv\codes\codesey\keys
+249 error Windows_NT 10.0.14393
+250 error argv "C:\\Users\\adm\\Downloads\\node.js-html-1\\node.js-html-1\\node.exe" "C:\\Users\\adm\\Downloads\\node.js-html-1\\node.js-html-1\\node_modules\\npm\\bin\\npm-cli.js" "install"
+251 error node v6.2.2
+252 error npm  v3.9.5
+253 error code 128
+254 error Command failed: git -c core.longpaths=true clone --template=C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:bitcoremgv/bitcore-build.git C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d
+254 error Cloning into bare repository 'C:\Users\adm\AppData\Roaming\npm-cache\_git-remotes\git-github-com-bitcoremgv-bitcore-build-git-f0f18f4d'...
+254 error ssh: Could not resolve hostname github.com: Name or service not known
+254 error fatal: Could not read from remote repository.
+254 error
+254 error Please make sure you have the correct access rights
+254 error and the repository exists.
+255 error If you need help, you may report this error at:
+255 error     <https://github.com/npm/npm/issues>
+256 verbose exit [ 1, true ]
