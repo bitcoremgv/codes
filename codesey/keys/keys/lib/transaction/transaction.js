@@ -223,7 +223,7 @@ Transaction.prototype._hasFeeError = function(opts, unspent) {
     var maximumFee = Math.floor(Transaction.FEE_SECURITY_MARGIN * this._estimateFee());
     if (unspent > maximumFee) {
       if (this._missingChange()) {
-        return new errors.Transaction.ChangeAddressMissing(
+       return new errors.Transaction.ChangeAddressMissing(
           'Fee is too large and no change address was provided'
         );
       }

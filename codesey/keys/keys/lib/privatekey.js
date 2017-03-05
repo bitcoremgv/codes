@@ -142,13 +142,22 @@ PrivateKey._transformBuffer = function(buf, network) {
   var info = {};
 
   if (buf.length === 32) {
-    return PrivateKey._transformBNBuffer(buf, network);
+     return PrivateKey._transformBNBuffer(buf, network);
   }
 
   info.network = Networks.get(buf[0], 'privatekey');
 
+
+
+
+
+
+
+
+
+
   if (!info.network) {
-    throw new Error('Invalid network');
+     throw new Error('Invalid network ');
   }
 
   if (network && info.network !== Networks.get(network)) {

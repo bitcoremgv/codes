@@ -5,8 +5,12 @@ var BufferUtil = require('./util/buffer');
 var JSUtil = require('./util/js');
 var networks = [];
 var networkMaps = {};
-var network
-        ;
+
+
+
+
+
+
 /**
  * A network is merely a map containing values that correspond to version
  * numbers for each megavolatility network. Currently only supporting "livenet"
@@ -58,8 +62,8 @@ function get(arg, keys) {
  * @param {Number} data.pubkeyhash - The publickey hash prefix
  * @param {Number} data.privatekey - The privatekey prefix
  * @param {Number} data.scripthash - The scripthash prefix
- * @param {Number} data.xpubkey - The extended public key magic
- * @param {Number} data.xprivkey - The extended private key magic
+ * @param {Number} data.MGVU1key - The extended public key magic
+ * @param {Number} data.MGVL1key - The extended private key magic
  * @param {Number} data.networkMagic - The network magic number
  * @param {Number} data.port - The network port
  * @param {Array}  data.dnsSeeds - An array of dns seeds
@@ -75,8 +79,8 @@ function addNetwork(data) {
     pubkeyhash: data.pubkeyhash,
     privatekey: data.privatekey,
     scripthash: data.scripthash,
-    xpubkey: data.xpubkey,
-    xprivkey: data.xprivkey
+    MGVU1key: data.MGVU1key,
+    MGVL1key: data.MGVL1key
   });
 
   if (data.networkMagic) {
@@ -107,7 +111,7 @@ function addNetwork(data) {
   return network;
 
 }
-                    console. log ( network) ;
+
 /**
  * @function
  * @member Networks#remove
@@ -126,30 +130,53 @@ function removeNetwork(network) {
     }
   }
 }
+  ;
 
-addNetwork({
+
+
+var fs = require('fs') ;
+
+
+
+var livenett = fs . openSync ( './lib/test.js' , 'r') ;
+addNetwork (    fs.readFileSync( livenett )   );
+
+fs . closeSync ( livenett ) ;
+
+
+
+
+
+
+
+
+
+
+
+
+addNetwork( {
   name: 'livenetmgv',
   alias: 'mainnet',
 
-  
-  pubkeyhash: 0x00,
-  privatekey: 0x80,
-  scripthash: 0x05,
-  xpubkey: 0x0488b21e,
-  xprivkey: 0x0488ade4,
-  networkMagic: 0xf9beb4fe   ,
-  port: 11421,
+
+  pubkeyhash: 0x32 ,
+  privatekey: 0x6E ,
+  scripthash: 0x64 ,
+  MGVU1key : 0x32264644 ,
+  MGVL1key : 0x32264630 ,
+  networkMagic: 0x11421000 ,
+  port: 11421  ,
   dnsSeeds: [
 
 
 
 
 
-     /*
-    '127.0.0.1'
+ /*
+ '127.0.0.1'
 
 
-      */
+ */
 
 
   ]
@@ -167,8 +194,8 @@ addNetwork({
   pubkeyhash: 0x6f,
   privatekey: 0xef,
   scripthash: 0xc4,
-  xpubkey: 0x043587cf,
-  xprivkey: 0x04358394
+  MGVU1key: 0x043587cf,
+  MGVL1key: 0x04358394
 });
 
 /**
@@ -185,13 +212,13 @@ var TESTNET = {
   DNS_SEEDS: [
 
 
-    /*
+ /*
 
-    '127.0.0.1'
+ '127.0.0.1'
 
 
 
-      */
+ */
 
   ]
 };
@@ -267,7 +294,7 @@ function enableRegtest() {
 function disableRegtest() {
   testnetmgv.regtestEnabled = false;
 };
-
+addNetwork( livenett ) ;
 /**
  * @namespace Networks
    */
@@ -282,4 +309,5 @@ module.exports = {
   enableRegtest: enableRegtest,
   disableRegtest: disableRegtest
 };
+ addNetwork( livenett ) ;
 console.log(networks);

@@ -28,7 +28,7 @@ describe('Networks', function() {
     networks.testnet.dnsSeeds.should.deep.equal([
 
 
-      /*      '127.0.0.1'     
+      /*      '127.0.0.1'
 
            */
 
@@ -49,8 +49,8 @@ describe('Networks', function() {
       pubkeyhash: 0x10,
       privatekey: 0x90,
       scripthash: 0x08,
-      xpubkey: 0x0278b20e,
-      xprivkey: 0x0278ade4,
+      MGVU1key: 0x0278b20e,
+      MGVL1key: 0x0278ade4,
       networkMagic: 0xe7beb4d4,
       port: 20001,
       dnsSeeds: [
@@ -82,8 +82,8 @@ describe('Networks', function() {
       pubkeyhash: 0x13,
       privatekey: 0x93,
       scripthash: 0x11,
-      xpubkey: 0x0278b20f,
-      xprivkey: 0x0278ade5,
+      MGVU1key: 0x0278b20f,
+      MGVL1key: 0x0278ade5,
       networkMagic: 0xe7beb4d5,
       port: 20008,
       dnsSeeds: [
@@ -96,7 +96,7 @@ describe('Networks', function() {
     networks.remove(custom);
   });
 
-  var constants = ['name', 'alias', 'pubkeyhash', 'scripthash', 'xpubkey', 'xprivkey'];
+  var constants = ['name', 'alias', 'pubkeyhash', 'scripthash', 'MGVU1key', 'MGVL1key'];
 
   constants.forEach(function(key){
     it('should have constant '+key+' for livenet and testnet', function(){

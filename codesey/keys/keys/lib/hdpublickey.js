@@ -103,7 +103,7 @@ HDPublicKey.isValidPath = function(arg) {
  * var parent = new HDPublicKey('xpub...');
  * var child_0_1_2 = parent.derive(0).derive(1).derive(2);
  * var copy_of_child_0_1_2 = parent.derive("m/0/1/2");
- * assert(child_0_1_2.xprivkey === copy_of_child_0_1_2);
+ * assert(child_0_1_2.MGVL1key === copy_of_child_0_1_2);
  * ```
  *
  * @param {string|number} arg
@@ -125,7 +125,7 @@ HDPublicKey.prototype._deriveWithNumber = function(index, hardened) {
   if (index < 0) {
     throw new hdErrors.InvalidPath(index);
   }
-  var cached = HDKeyCache.get(this.xpubkey, index, false);
+  var cached = HDKeyCache.get(this.MGVU1key, index, false);
   if (cached) {
     return cached;
   }
@@ -146,7 +146,7 @@ HDPublicKey.prototype._deriveWithNumber = function(index, hardened) {
     chainCode: chainCode,
     publicKey: publicKey
   });
-  HDKeyCache.set(this.xpubkey, index, false, derived);
+  HDKeyCache.set(this.MGVU1key, index, false, derived);
   return derived;
 };
 
@@ -212,7 +212,7 @@ HDPublicKey.getSerializedError = function(data, network) {
     }
   }
   var version = BufferUtil.integerFromBuffer(data.slice(0, 4));
-  if (version === Network.livenet.xprivkey || version === Network.testnet.xprivkey ) {
+  if (version === Network.livenet.MGVL1key || version === Network.testnet.MGVL1key ) {
     return new hdErrors.ArgumentIsPrivateExtended();
   }
   return null;
@@ -224,7 +224,7 @@ HDPublicKey._validateNetwork = function(data, networkArg) {
     return new errors.InvalidNetworkArgument(networkArg);
   }
   var version = data.slice(HDPublicKey.VersionStart, HDPublicKey.VersionEnd);
-  if (BufferUtil.integerFromBuffer(version) !== network.xpubkey) {
+  if (BufferUtil.integerFromBuffer(version) !== network.MGVU1key) {
     return new errors.InvalidNetwork(version);
   }
   return null;
@@ -234,10 +234,10 @@ HDPublicKey.prototype._buildFromPrivate = function (arg) {
   var args = _.clone(arg._buffers);
   var point = Point.getG().mul(BN.fromBuffer(args.privateKey));
   args.publicKey = Point.pointToCompressed(point);
-  args.version = BufferUtil.integerAsBuffer(Network.get(BufferUtil.integerFromBuffer(args.version)).xpubkey);
+  args.version = BufferUtil.integerAsBuffer(Network.get(BufferUtil.integerFromBuffer(args.version)).MGVU1key);
   args.privateKey = undefined;
   args.checksum = undefined;
-  args.xprivkey = undefined;
+  args.MGVL1key = undefined;
   return this._buildFromBuffers(args);
 };
 
@@ -245,7 +245,7 @@ HDPublicKey.prototype._buildFromObject = function(arg) {
   /* jshint maxcomplexity: 10 */
   // TODO: Type validation
   var buffers = {
-    version: arg.network ? BufferUtil.integerAsBuffer(Network.get(arg.network).xpubkey) : arg.version,
+    version: arg.network ? BufferUtil.integerAsBuffer(Network.get(arg.network).MGVU1key) : arg.version,
     depth: _.isNumber(arg.depth) ? BufferUtil.integerAsSingleByteBuffer(arg.depth) : arg.depth,
     parentFingerPrint: _.isNumber(arg.parentFingerPrint) ? BufferUtil.integerAsBuffer(arg.parentFingerPrint) : arg.parentFingerPrint,
     childIndex: _.isNumber(arg.childIndex) ? BufferUtil.integerAsBuffer(arg.childIndex) : arg.childIndex,
@@ -268,7 +268,7 @@ HDPublicKey.prototype._buildFromSerialized = function(arg) {
     chainCode: decoded.slice(HDPublicKey.ChainCodeStart, HDPublicKey.ChainCodeEnd),
     publicKey: decoded.slice(HDPublicKey.PublicKeyStart, HDPublicKey.PublicKeyEnd),
     checksum: decoded.slice(HDPublicKey.ChecksumStart, HDPublicKey.ChecksumEnd),
-    xpubkey: arg
+    MGVU1key: arg
   };
   return this._buildFromBuffers(buffers);
 };
@@ -285,7 +285,7 @@ HDPublicKey.prototype._buildFromSerialized = function(arg) {
  * @param {buffer.Buffer} arg.chainCode
  * @param {buffer.Buffer} arg.publicKey
  * @param {buffer.Buffer} arg.checksum
- * @param {string=} arg.xpubkey - if set, don't recalculate the base58
+ * @param {string=} arg.MGVU1key - if set, don't recalculate the base58
  *      representation
  * @return {HDPublicKey} this
  */
@@ -314,16 +314,16 @@ HDPublicKey.prototype._buildFromBuffers = function(arg) {
   }
   var network = Network.get(BufferUtil.integerFromBuffer(arg.version));
 
-  var xpubkey;
-  xpubkey = Base58Check.encode(BufferUtil.concat(sequence));
-  arg.xpubkey = new Buffer(xpubkey);
+  var MGVU1key;
+  MGVU1key = Base58Check.encode(BufferUtil.concat(sequence));
+  arg.MGVU1key = new Buffer(MGVU1key);
 
   var publicKey = new PublicKey(arg.publicKey, {network: network});
   var size = HDPublicKey.ParentFingerPrintSize;
   var fingerPrint = Hash.sha256ripemd160(publicKey.toBuffer()).slice(0, size);
 
   JSUtil.defineImmutable(this, {
-    xpubkey: xpubkey,
+    MGVU1key: MGVU1key,
     network: network,
     depth: BufferUtil.integerFromSingleByteBuffer(arg.depth),
     publicKey: publicKey,
@@ -368,7 +368,7 @@ HDPublicKey.fromObject = function(arg) {
  * @return {string} a string starting with "xpub..." in livenetmgv
  */
 HDPublicKey.prototype.toString = function() {
-  return this.xpubkey;
+  return this.MGVU1key;
 };
 
 /**
@@ -376,7 +376,7 @@ HDPublicKey.prototype.toString = function() {
  * @return string
  */
 HDPublicKey.prototype.inspect = function() {
-  return '<HDPublicKey: ' + this.xpubkey + '>';
+  return '<HDPublicKey: ' + this.MGVU1key + '>';
 };
 
 /**
@@ -392,8 +392,8 @@ HDPublicKey.prototype.inspect = function() {
  *  <li> chainCode: string in hexa encoding used for derivation
  *  <li> publicKey: string, hexa encoded, in compressed key format
  *  <li> checksum: BufferUtil.integerFromBuffer(this._buffers.checksum),
- *  <li> xpubkey: the string with the base58 representation of this extended key
- *  <li> checksum: the base58 checksum of xpubkey
+ *  <li> MGVU1key: the string with the base58 representation of this extended key
+ *  <li> checksum: the base58 checksum of MGVU1key
  * </ul>
  */
 HDPublicKey.prototype.toObject = HDPublicKey.prototype.toJSON = function toObject() {
@@ -406,7 +406,7 @@ HDPublicKey.prototype.toObject = HDPublicKey.prototype.toJSON = function toObjec
     chainCode: BufferUtil.bufferToHex(this._buffers.chainCode),
     publicKey: this.publicKey.toString(),
     checksum: BufferUtil.integerFromBuffer(this._buffers.checksum),
-    xpubkey: this.xpubkey
+    MGVU1key: this.MGVU1key
   };
 };
 
@@ -421,12 +421,12 @@ HDPublicKey.fromBuffer = function(arg) {
 };
 
 /**
- * Return a buffer representation of the xpubkey
+ * Return a buffer representation of the MGVU1key
  *
  * @return {Buffer}
  */
 HDPublicKey.prototype.toBuffer = function() {
-  return BufferUtil.copy(this._buffers.xpubkey);
+  return BufferUtil.copy(this._buffers.MGVU1key);
 };
 
 HDPublicKey.Hardened = 0x80000000;

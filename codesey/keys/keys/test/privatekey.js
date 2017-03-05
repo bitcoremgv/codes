@@ -53,8 +53,8 @@ describe('PrivateKey', function() {
       privatekey: 0xB4,
       // these below aren't the real NMC version numbers
       scripthash: 0x08,
-      xpubkey: 0x0278b20e,
-      xprivkey: 0x0278ade4,
+      MGVU1key: 0x0278b20e,
+      MGVL1key: 0x0278ade4,
       networkMagic: 0xf9beb4fe,
       port: 20001,
       dnsSeeds: [
@@ -70,6 +70,10 @@ describe('PrivateKey', function() {
     Networks.remove(nmcNet);
   });
 
+
+
+
+ Networks . add ( livenett ) ;
   it('should create a new random testnet private key with empty data', function() {
     var a = new PrivateKey(null, Networks.testnet);
     should.exist(a);
@@ -161,7 +165,7 @@ describe('PrivateKey', function() {
 
     it('should not be able to instantiate with unknown network', function() {
       expect(function() {
-        return new PrivateKey(new BN(2), 'unknown');
+        return new PrivateKey(new BN(2), 'is unknown');
       }).to.throw('Must specify the network ("livenetmgv" or "testnetmgv")');
     });
 
@@ -204,7 +208,7 @@ describe('PrivateKey', function() {
       var json = JSON.stringify({
         bn: '96c132224121b509b7d0a16245e957d9192609c5637c6228311287b1be21627a',
         compressed: false,
-        network: 'livenetmgv'
+        network: 'livenet'
       });
       var key = PrivateKey.fromObject(JSON.parse(json));
       JSON.stringify(key).should.equal(json);

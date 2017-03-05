@@ -141,7 +141,7 @@ module.exports = [{
     }]
   }, {
     name: 'InvalidLength',
-    message: 'Invalid length for xprivkey string in {0}'
+    message: 'Invalid length for MGVL1key string in {0}'
   }, {
     name: 'InvalidPath',
     message: 'Invalid derivation path: {0}'
@@ -160,7 +160,7 @@ module.exports = [{
     message: 'Invalid derivation argument: got {0}'
   }, {
     name: 'InvalidLength',
-    message: 'Invalid length for xpubkey: got "{0}"'
+    message: 'Invalid length for MGVU1key: got "{0}"'
   }, {
     name: 'InvalidPath',
     message: 'Invalid derivation path, it should look like: "m/1/100", got "{0}"'

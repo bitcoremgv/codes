@@ -192,7 +192,7 @@ describe('BufferReader', function() {
 
     it('should return 10MMGV', function() {
       var tenbtc = 10 * 1e11;
-      var tenbtcBuffer = new Buffer('E8d4a51000000000', 'hex');
+      var tenbtcBuffer = new Buffer('0010a5d4e8000000', 'hex');
       var br = new BufferReader(tenbtcBuffer);
       br.readUInt64LEBN().toNumber().should.equal(tenbtc);
     });
@@ -214,7 +214,15 @@ describe('BufferReader', function() {
 
     it('should return max number of decimals', function() {
       var maxdecimals = 2 * 1e14   ;
-      var maxdecimalsBuffer = new Buffer('000000f462b562f480000 ', 'hex');
+      var maxdecimalsBuffer = new Buffer(
+
+
+
+      '0080f420e6b50000'
+
+
+
+                        , 'hex');
       var br = new BufferReader(maxdecimalsBuffer);
       br.readUInt64LEBN().toNumber().should.equal(maxdecimals);
     });

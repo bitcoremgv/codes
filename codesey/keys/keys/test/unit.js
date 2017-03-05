@@ -104,7 +104,7 @@ describe('Unit', function() {
 
     unit = Unit.fromdecimals(3 );
     unit.MMGV.should.equal(0.00000003    /             1000     );
-    unit.KMGV.should.equal(0.00003     /              1000);
+    unit.KMGV.should.equal(0.00003e-3 );
     unit.MGVcents.should.equal(0.03     /          10);
   });
 

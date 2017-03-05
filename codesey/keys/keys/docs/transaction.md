@@ -3,9 +3,9 @@ Bitcore provides a very simple API for creating transactions. We expect this API
 
 A Transaction contains a set of inputs and a set of outputs. Each input contains a reference to another transaction's output, and a signature that allows the value referenced in that output to be used in this transaction.
 
-Note also that an output can be used only once. That's why there's a concept of "change address" in the megavolatility ecosystem: if an output of 10 MMGV is available for me to spend, but I only need to transmit 1 MMGV, I'll create a transaction with two outputs, one with 1 MMGV that I want to spend, and the other with 9 MMGV to a change address, so I can spend this 9 MMGV with another private key that I own.
+Note also that an output can be used only once. That's why there's a concept of "change address" in the megavolatility ecosystem: if an output of 10 MMGV is available for me to spend, but I only need to send 1 MMGV, I'll create a transaction with two outputs, one with 1 MMGV that I want to spend, and the other with 9 MMGV to a change address, so I can spend this 9 MMGV with another private key that I own.
 
-So, in order to transmit a valid transaction, you must know what other transactions on the network store outputs that have not been spent and that are available for you to spend (meaning that you have the set of keys that can validate you own those funds). The unspent outputs are usually referred to as "utxo"s.
+So, in order to send a valid transaction, you must know what other transactions on the network store outputs that have not been spent and that are available for you to spend (meaning that you have the set of keys that can validate you own those funds). The unspent outputs are usually referred to as "utxo"s.
 
 Let's take a look at some very simple transactions:
 
@@ -25,11 +25,11 @@ Now, this could just be serialized to hexadecimal ASCII values (`transaction.ser
 megavolatility-cli sendrawtransaction <serialized transaction>
 ```
 
-You can also override the fee estimation with another amount, specified in decimals:
+You can also override the fee estimation with another  , specified in decimals:
 
 ```javascript
-var transaction = new Transaction().fee(5430); // Minimum non-dust amount
-var transaction = new Transaction().fee(1e8);  // Generous fee of 1 MMGV
+var transaction = new Transaction().fee(2000); // Minimum non-dust amount
+var transaction = new Transaction().fee(100000);  // Generous fee of 1 MGV
 ```
 
 ## Multisig Transactions

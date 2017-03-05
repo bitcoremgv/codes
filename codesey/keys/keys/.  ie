@@ -5,7 +5,7 @@ node_modules
  gulp test
 
 npm install gulp
-
+npm install 
 browser/tests.js
 docs/api
 

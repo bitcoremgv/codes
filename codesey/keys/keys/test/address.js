@@ -356,8 +356,8 @@ describe('Address', function() {
         pubkeyhash: 0x1c,
         privatekey: 0x1e,
         scripthash: 0x28,
-        xpubkey: 0x02e8de8f,
-        xprivkey: 0x02e8da54,
+        MGVU1key: 0x02e8de8f,
+        MGVL1key: 0x02e8da54,
         networkMagic: 0x0c110907,
         port: 7333
       };
