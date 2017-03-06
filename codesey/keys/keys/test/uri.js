@@ -80,7 +80,7 @@ describe('URI', function() {
     it('parses address', function() {
       uri = new URI('megavolatility:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
       uri.address.should.be.instanceof(bitcore.Address);
-      uri.network.should.equal(Networks.livenet);
+      uri.network.should.equal(Networks.livenetmgv);
     });
 
     it('parses amount', function() {
@@ -90,7 +90,7 @@ describe('URI', function() {
       expect(uri.otherParam).to.be.undefined();
     });
 
-    it('parses a testnet address', function() {
+    it('parses a testnetmgv address', function() {
       uri = new URI('megavolatility:mkYY5NRvikVBY1EPtaq9fAFgquesdjqECw');
       uri.address.should.be.instanceof(bitcore.Address);
       uri.network.should.equal(Networks.testnet);
@@ -128,7 +128,7 @@ describe('URI', function() {
       address: '1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj'
     });
     uri.address.should.be.instanceof(bitcore.Address);
-    uri.network.should.equal(Networks.livenet);
+    uri.network.should.equal(Networks.livenetmgv);
 
     uri = new URI({
       address: 'mkYY5NRvikVBY1EPtaq9fAFgquesdjqECw'

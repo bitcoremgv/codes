@@ -340,7 +340,7 @@ describe('PublicKey', function() {
       address.toString().should.equal('1A6ut1tWnUq1SEQLMr4ttDh24wcbJ5o9TT');
     });
 
-    it('should output this known testnet address correctly', function() {
+    it('should output this known testnetmgv address correctly', function() {
       var pk = new PublicKey('0293126ccc927c111b88a0fe09baa0eca719e2a3e087e8a5d1059163f5c566feef');
       var address = pk.toAddress('testnetmgv');
       address.toString().should.equal('mtX8nPZZdJ8d3QNLRJ1oJTiEi26Sj6LQXS');

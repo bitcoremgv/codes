@@ -1,4 +1,10 @@
-# HDKeys
+var bitcore
+var PrivateKey     bitcore      PrivateKey ;
+ var PublicKey    bitcore  PublicKey
+var networks       bitcore Networks
+var Address      bitcore Address
+
+
 Create and derive extended public and private keys according to the BIP32 standard for Hierarchical Deterministic (HD) keys.
 
 ## Hierarchically Derived Keys
@@ -14,11 +20,11 @@ var bitcore = require('bitcore');
 var HDPrivateKey = bitcore.HDPrivateKey;
 
 var hdPrivateKey = new HDPrivateKey();
-var retrieved = new HDPrivateKey('xpriv...');
+var retrieved = new HDPrivateKey('MGVL...');
 var derived = hdPrivateKey.derive("m/0'");
 var derivedByNumber = hdPrivateKey.derive(1).derive(2, true);
 var derivedByArgument = hdPrivateKey.derive("m/1/2'");
-assert(derivedByNumber.xprivkey === derivedByArgument.xprivkey);
+assert(derivedByNumber.MGVL1key === derivedByArgument.MGVL1key);
 
 var address = derived.privateKey.toAddress();
 

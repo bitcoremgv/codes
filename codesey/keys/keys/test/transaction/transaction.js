@@ -922,7 +922,7 @@ describe('Transaction', function() {
       transaction.outputAmount.should.equal(99999000 );
     });
     it('returns correct values for coinjoin transaction', function() {
-      // see livenet tx c16467eea05f1f30d50ed6dbc06a38539d9bb15110e4b7dc6653046a3678a718
+      // see livenetmgv tx c16467eea05f1f30d50ed6dbc06a38539d9bb15110e4b7dc6653046a3678a718
       var transaction = new Transaction(txCoinJoinHex);
       transaction.outputAmount.should.equal(4191290961);
       expect(function() {

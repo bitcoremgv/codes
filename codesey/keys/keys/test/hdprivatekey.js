@@ -50,7 +50,7 @@ describe('HDPrivate key interface', function() {
     should.exist(new HDPrivateKey().MGVL1key);
   });
 
-  it('should make a new private key from random for testnet', function() {
+  it('should make a new private key from random for testnetmgv', function() {
     var key = new HDPrivateKey('testnetmgv');
     should.exist(key.MGVL1key);
     key.network.name.should.equal('testnetmgv');
@@ -93,12 +93,12 @@ describe('HDPrivate key interface', function() {
   });
 
   describe('public key', function() {
-    var testnetKey = new HDPrivateKey('tprv8ZgxMBicQKsPdEeU2KiGFnUgRGriMnQxrwrg6FWCBg4jeiidHRyCCdA357kfkZiGaXEapWZsGDKikeeEbvgXo3UmEdbEKNdQH9VXESmGuUK');
-    var livenetKey = new HDPrivateKey('xprv9s21ZrQH143K3e39bnn1vyS7YFa1EAJAFGDoeHaSBsgBxgAkTEXeSx7xLvhNQNJxJwhzziWcK3znUFKRPRwWBPkKZ8ijUBa5YYpYPQmeBDX');
+    var testnetmgvKey = new HDPrivateKey('tprv8ZgxMBicQKsPdEeU2KiGFnUgRGriMnQxrwrg6FWCBg4jeiidHRyCCdA357kfkZiGaXEapWZsGDKikeeEbvgXo3UmEdbEKNdQH9VXESmGuUK');
+    var livenetmgvKey = new HDPrivateKey('xprv9s21ZrQH143K3e39bnn1vyS7YFa1EAJAFGDoeHaSBsgBxgAkTEXeSx7xLvhNQNJxJwhzziWcK3znUFKRPRwWBPkKZ8ijUBa5YYpYPQmeBDX');
 
     it('matches the network', function() {
-      testnetKey.publicKey.network.should.equal(Networks.testnet);
-      livenetKey.publicKey.network.should.equal(Networks.livenet);
+      testnetmgvKey.publicKey.network.should.equal(Networks.testnet);
+      livenetmgvKey.publicKey.network.should.equal(Networks.livenet);
     });
 
     it('cache for MGVU1key works', function() {

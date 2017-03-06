@@ -15,7 +15,7 @@ var Base58Check = function Base58Check(obj) {
     var str = obj;
     this.fromString(str);
   } else if (obj) {
-    this.set(obj);
+    this.set(obj); 
   }
 };
 

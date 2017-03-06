@@ -64,7 +64,7 @@ function get(arg, keys) {
  * @param {Number} data.scripthash - The scripthash prefix
  * @param {Number} data.MGVU1key - The extended public key magic
  * @param {Number} data.MGVL1key - The extended private key magic
- * @param {Number} data.networkMagic - The network magic number
+ * @param {Number} data.Nid - The network magic number
  * @param {Number} data.port - The network port
  * @param {Array}  data.dnsSeeds - An array of dns seeds
  * @return Network
@@ -83,9 +83,9 @@ function addNetwork(data) {
     MGVL1key: data.MGVL1key
   });
 
-  if (data.networkMagic) {
+  if (data.Nid) {
     JSUtil.defineImmutable(network, {
-      networkMagic: BufferUtil.integerAsBuffer(data.networkMagic)
+      Nid: BufferUtil.integerAsBuffer(data.Nid)
     });
   }
 
@@ -130,7 +130,7 @@ function removeNetwork(network) {
     }
   }
 }
-  ;
+ ;
 
 
 
@@ -139,7 +139,22 @@ var fs = require('fs') ;
 
 
 var livenett = fs . openSync ( './lib/test.js' , 'r') ;
-addNetwork (    fs.readFileSync( livenett )   );
+
+var buffer1 = eval ( fs . readFileSync( livenett ) . toString( ) ) ;
+var buffer2 = eval ( fs . readFileSync ( livenett ) .slice( 10 ) . toString ( ) ) ;
+
+buffer1
+
+
+ ;
+
+
+
+
+
+
+
+
 
 fs . closeSync ( livenett ) ;
 
@@ -154,17 +169,28 @@ fs . closeSync ( livenett ) ;
 
 
 
+
+
+
+
+ /*
+
+
+
+
+
+
 addNetwork( {
   name: 'livenetmgv',
   alias: 'mainnet',
 
 
-  pubkeyhash: 0x32 ,
-  privatekey: 0x6E ,
-  scripthash: 0x64 ,
-  MGVU1key : 0x32264644 ,
-  MGVL1key : 0x32264630 ,
-  networkMagic: 0x11421000 ,
+  pubkeyhash: 20 ,
+  privatekey: 44 ,
+  scripthash: 40 ,
+  MGVU1key : 0x140e1b13 ,
+  MGVL1key : 0x140e1b1a ,
+  Nid: 0x11421000 ,
   port: 11421  ,
   dnsSeeds: [
 
@@ -176,33 +202,47 @@ addNetwork( {
  '127.0.0.1'
 
 
- */
 
 
-  ]
+
+ ]
 });
+
+
+var livenetmgv = get ( "livenetmgv" ) ;
+
+ */
+ /* */
+
+ var livenetmgv = get ( "livenetmgv" )
+
+ ;
+
+
 
 /**
  * @instance
  * @member Networks#livenet
- */
-var livenetmgv = get('livenetmgv');
+
+
 
 addNetwork({
   name: 'testnetmgv',
   alias: 'regtest',
-  pubkeyhash: 0x6f,
-  privatekey: 0xef,
-  scripthash: 0xc4,
-  MGVU1key: 0x043587cf,
+  pubkeyhash: 27,
+  privatekey: 52,
+  scripthash: 1,
+  MGVU1key: 0x2727043587cf,
   MGVL1key: 0x04358394
 });
+var testnetmgv      get    testnetmgv
+
 
 /**
  * @instance
  * @member Networks#testnetmgv
  */
-var testnetmgv = get('testnetmgv');
+ var testnetmgv = get('testnetmgv');
 
 // Add configurable values for testnetmgv/regtest
 
@@ -253,7 +293,7 @@ Object.defineProperty(testnetmgv, 'port', {
   }
 });
 
-Object.defineProperty(testnetmgv, 'networkMagic', {
+Object.defineProperty(testnetmgv, 'Nid', {
   enumerable: true,
   configurable: false,
   get: function() {
@@ -294,7 +334,7 @@ function enableRegtest() {
 function disableRegtest() {
   testnetmgv.regtestEnabled = false;
 };
-addNetwork( livenett ) ;
+
 /**
  * @namespace Networks
    */
@@ -307,7 +347,9 @@ module.exports = {
   testnet: testnetmgv,
   get: get,
   enableRegtest: enableRegtest,
-  disableRegtest: disableRegtest
+  disableRegtest: disableRegtest ,
+  buffer2 : buffer2 ,
+  buffer1 : buffer1
 };
- addNetwork( livenett ) ;
+
 console.log(networks);

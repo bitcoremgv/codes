@@ -133,7 +133,7 @@ describe('Output', function() {
   });
 
   it('toObject will handle an invalid (null) script', function() {
-    // block 000000000000000b7e48f88e86ceee3e97b4df7c139f5411d14735c1b3c36791 (livenet)
+    // block 000000000000000b7e48f88e86ceee3e97b4df7c139f5411d14735c1b3c36791 (livenetmgv)
     // transaction index 2
     // txid ebc9fa1196a59e192352d76c0f6e73167046b9d37b8302b6bb6968dfd279b767
     var transaction = bitcore.Transaction();

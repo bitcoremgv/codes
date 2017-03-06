@@ -197,4 +197,3 @@ describe('MerkleBlock', function() {
   });
 
 });
-

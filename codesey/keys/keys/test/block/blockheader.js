@@ -255,21 +255,21 @@ describe('BlockHeader', function() {
       x.getDifficulty().should.equal(4);
     });
 
-    it('should get the correct difficulty for testnet block 552065', function() {
+    it('should get the correct difficulty for testnetmgv block 552065', function() {
       var x = new BlockHeader({
         MGVcents: 0x1b00c2a8
       });
       x.getDifficulty().should.equal(86187.62562209);
     });
 
-    it('should get the correct difficulty for livenet block 373043', function() {
+    it('should get the correct difficulty for livenetmgv block 373043', function() {
       var x = new BlockHeader({
         MGVcents: 0x18134dc1
       });
       x.getDifficulty().should.equal(56957648455.01001);
     });
 
-    it('should get the correct difficulty for livenet block 340000', function() {
+    it('should get the correct difficulty for livenetmgv block 340000', function() {
       var x = new BlockHeader({
         MGVcents: 0x1819012f
       });

@@ -348,7 +348,7 @@ HDPrivateKey.fromSeed = function(hexa, network) {
   if (hexa.length > ENTROPY * BITS_TO_BYTES) {
     throw new hdErrors.InvalidEntropyArgument.TooMuchEntropy(hexa);
   }
-  var hash = Hash.sha512hmac(hexa, new buffer.Buffer('MegaVolatility seed'));
+  var hash = Hash.sha512hmac(hexa, new buffer.Buffer('megavolatility seed'));
 
   return new HDPrivateKey({
     network: Network.get(network) || Network.defaultNetwork,

@@ -144,7 +144,7 @@ HDPrivateKey._getDerivationIndexes = function(path) {
  * var parent = new HDPrivateKey('xprv...');
  * var child_0_1_2h = parent.derive(0).derive(1).derive(2, true);
  * var copy_of_child_0_1_2h = parent.derive("m/0/1/2'");
- * assert(child_0_1_2h.xprivkey === copy_of_child_0_1_2h);
+ * assert(child_0_1_2h.MGVL1key === copy_of_child_0_1_2h);
  * ```
  *
  * @param {string|number} arg
@@ -172,7 +172,7 @@ HDPrivateKey.prototype._deriveWithNumber = function(index, hardened) {
     index += HDPrivateKey.Hardened;
   }
 
-  var cached = HDKeyCache.get(this.xprivkey, index, hardened);
+  var cached = HDKeyCache.get(this.MGVL1key, index, hardened);
   if (cached) {
     return cached;
   }
@@ -202,7 +202,7 @@ HDPrivateKey.prototype._deriveWithNumber = function(index, hardened) {
     chainCode: chainCode,
     privateKey: privateKey
   });
-  HDKeyCache.set(this.xprivkey, index, hardened, derived);
+  HDKeyCache.set(this.MGVL1key, index, hardened, derived);
   return derived;
 };
 
@@ -272,7 +272,7 @@ HDPrivateKey._validateNetwork = function(data, networkArg) {
     return new errors.InvalidNetworkArgument(networkArg);
   }
   var version = data.slice(0, 4);
-  if (BufferUtil.integerFromBuffer(version) !== network.xprivkey) {
+  if (BufferUtil.integerFromBuffer(version) !== network.MGVL1key) {
     return new errors.InvalidNetwork(version);
   }
   return null;
@@ -296,7 +296,7 @@ HDPrivateKey.prototype._buildFromObject = function(arg) {
   /* jshint maxcomplexity: 12 */
   // TODO: Type validation
   var buffers = {
-    version: arg.network ? BufferUtil.integerAsBuffer(Network.get(arg.network).xprivkey) : arg.version,
+    version: arg.network ? BufferUtil.integerAsBuffer(Network.get(arg.network).MGVL1key) : arg.version,
     depth: _.isNumber(arg.depth) ? BufferUtil.integerAsSingleByteBuffer(arg.depth) : arg.depth,
     parentFingerPrint: _.isNumber(arg.parentFingerPrint) ? BufferUtil.integerAsBuffer(arg.parentFingerPrint) : arg.parentFingerPrint,
     childIndex: _.isNumber(arg.childIndex) ? BufferUtil.integerAsBuffer(arg.childIndex) : arg.childIndex,
@@ -318,7 +318,7 @@ HDPrivateKey.prototype._buildFromSerialized = function(arg) {
     chainCode: decoded.slice(HDPrivateKey.ChainCodeStart, HDPrivateKey.ChainCodeEnd),
     privateKey: decoded.slice(HDPrivateKey.PrivateKeyStart, HDPrivateKey.PrivateKeyEnd),
     checksum: decoded.slice(HDPrivateKey.ChecksumStart, HDPrivateKey.ChecksumEnd),
-    xprivkey: arg
+    MGVL1key: arg
   };
   return this._buildFromBuffers(buffers);
 };
@@ -381,7 +381,7 @@ HDPrivateKey.prototype._calcHDPublicKey = function() {
  * @param {buffer.Buffer} arg.chainCode
  * @param {buffer.Buffer} arg.privateKey
  * @param {buffer.Buffer} arg.checksum
- * @param {string=} arg.xprivkey - if set, don't recalculate the base58
+ * @param {string=} arg.MGVL1key - if set, don't recalculate the base58
  *      representation
  * @return {HDPrivateKey} this
  */
@@ -409,9 +409,9 @@ HDPrivateKey.prototype._buildFromBuffers = function(arg) {
   }
 
   var network = Network.get(BufferUtil.integerFromBuffer(arg.version));
-  var xprivkey;
-  xprivkey = Base58Check.encode(buffer.Buffer.concat(sequence));
-  arg.xprivkey = new Buffer(xprivkey);
+  var MGVL1key;
+  MGVL1key = Base58Check.encode(buffer.Buffer.concat(sequence));
+  arg.MGVL1key = new Buffer(MGVL1key);
 
   var privateKey = new PrivateKey(BN.fromBuffer(arg.privateKey), network);
   var publicKey = privateKey.toPublicKey();
@@ -419,7 +419,7 @@ HDPrivateKey.prototype._buildFromBuffers = function(arg) {
   var fingerPrint = Hash.sha256ripemd160(publicKey.toBuffer()).slice(0, size);
 
   JSUtil.defineImmutable(this, {
-    xprivkey: xprivkey,
+    MGVL1key: MGVL1key,
     network: network,
     depth: BufferUtil.integerFromSingleByteBuffer(arg.depth),
     privateKey: privateKey,
@@ -437,12 +437,12 @@ HDPrivateKey.prototype._buildFromBuffers = function(arg) {
       return this._hdPublicKey;
     }
   });
-  Object.defineProperty(this, 'xpubkey', {
+  Object.defineProperty(this, 'MGVU1key', {
     configurable: false,
     enumerable: true,
     get: function() {
       this._calcHDPublicKey();
-      return this._hdPublicKey.xpubkey;
+      return this._hdPublicKey.MGVU1key;
     }
   });
   return this;
@@ -475,7 +475,7 @@ HDPrivateKey._validateBufferArguments = function(arg) {
  * @return string
  */
 HDPrivateKey.prototype.toString = function() {
-  return this.xprivkey;
+  return this.MGVL1key;
 };
 
 /**
@@ -483,7 +483,7 @@ HDPrivateKey.prototype.toString = function() {
  * @return string
  */
 HDPrivateKey.prototype.inspect = function() {
-  return '<HDPrivateKey: ' + this.xprivkey + '>';
+  return '<HDPrivateKey: ' + this.MGVL1key + '>';
 };
 
 /**
@@ -499,15 +499,15 @@ HDPrivateKey.prototype.inspect = function() {
  * <li> childIndex: the index from which this child was derived (or zero)
  * <li> chainCode: an hexa string representing a number used in the derivation
  * <li> privateKey: the private key associated, in hexa representation
- * <li> xprivkey: the representation of this extended private key in checksum
+ * <li> MGVL1key: the representation of this extended private key in checksum
  * <li>     base58 format
- * <li> checksum: the base58 checksum of xprivkey
+ * <li> checksum: the base58 checksum of MGVL1key
  * </ul>
  *  @return {Object}
  */
 HDPrivateKey.prototype.toObject = HDPrivateKey.prototype.toJSON = function toObject() {
   return {
-    network: Network.get(BufferUtil.integerFromBuffer(this._buffers.version), 'xprivkey').name,
+    network: Network.get(BufferUtil.integerFromBuffer(this._buffers.version), 'MGVL1key').name,
     depth: BufferUtil.integerFromSingleByteBuffer(this._buffers.depth),
     fingerPrint: BufferUtil.integerFromBuffer(this.fingerPrint),
     parentFingerPrint: BufferUtil.integerFromBuffer(this._buffers.parentFingerPrint),
@@ -515,7 +515,7 @@ HDPrivateKey.prototype.toObject = HDPrivateKey.prototype.toJSON = function toObj
     chainCode: BufferUtil.bufferToHex(this._buffers.chainCode),
     privateKey: this.privateKey.toBuffer().toString('hex'),
     checksum: BufferUtil.integerFromBuffer(this._buffers.checksum),
-    xprivkey: this.xprivkey
+    MGVL1key: this.MGVL1key
   };
 };
 
@@ -535,7 +535,7 @@ HDPrivateKey.fromBuffer = function(arg) {
  * @return {string}
  */
 HDPrivateKey.prototype.toBuffer = function() {
-  return BufferUtil.copy(this._buffers.xprivkey);
+  return BufferUtil.copy(this._buffers.MGVL1key);
 };
 
 HDPrivateKey.DefaultDepth = 0;

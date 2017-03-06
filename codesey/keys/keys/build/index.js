@@ -102,10 +102,10 @@ function startGulp(name, opts) {
     var browserifyCommand;
 
     if (name !== 'lib') {
-      browserifyCommand = buildBinPath + 'browserify --require ./index.js:' + fullname + ' --external bitcore-lib -o ' + fullname + '.js';
+      browserifyCommand = buildBinPath + 'browserify --require ./index.js:' + fullname + ' --external bitcoremgv -o ' + fullname + '.js';
     } else {
-      browserifyCommand = buildBinPath + 'browserify --require ./index.js:bitcore-lib -o bitcore-lib.js';
-    }
+      browserifyCommand = buildBinPath + 'browserify --require ./index.js:  bitcoremgv -o   bitcoremgv.js';
+  }
 
     gulp.task('browser:uncompressed', shell.task([
       browserifyCommand

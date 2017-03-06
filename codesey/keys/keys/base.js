@@ -41,7 +41,7 @@ var base    =
 
 
 
-   /*     . toString( 16 )         */    
+   /*     . toString( 16 )         */
        /*   */
 
 

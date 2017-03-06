@@ -57,9 +57,9 @@
       "txid": "f50e13cecda9a438ebd7df213a2899e42b2461a18d4630ee773d26b4f2688bdc",
       "vout": 1,
       "scriptPubKey": "76a914089acaba6af8b2b4fb4bed3b747ab1e4e60b496588ac",
-      "decimals":3000
+      "decimals":6000
     }],
-    "to", ["n3riXZowrjGnY74rx7Hdi9wCyvgyJC28zZ", 3000],
+    "to", ["n3riXZowrjGnY74rx7Hdi9wCyvgyJC28zZ", 2200],
     "sign", ["cPwWtDztEgRCMCU8pMQp4HgphvyadrAsYBrCjXUZuDSmnZkyoyNF"],
     "serialize", "0100000001dc8b68f2b4263d77ee30468da161242be499283a21dfd7eb38a4a9cdce130ef5010000006a473044022012610834051e6af8594dd5d9c47123d6ce03537d321f9fe3f6ff244b23f47dd5022034901bb0d83688758a9248fdef48bd2000b55cf70111cbef8f206e72a31aaf61012103e26b47e7c0d8946954bf9dd4bc7f9e415437eb98271d05f69e78cef8fc6c9a54ffffffff01301b0f00000000001976a914f50f9826ef186074c6fe206cca6b71472ff07ba888ac00000000"
   ],

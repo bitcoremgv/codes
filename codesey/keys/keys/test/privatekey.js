@@ -39,7 +39,7 @@ describe('PrivateKey', function() {
     should.exist(a.bn);
   });
 
-  it('should create a new random testnet private key with only one argument', function() {
+  it('should create a new random testnetmgv private key with only one argument', function() {
     var a = new PrivateKey(Networks.testnet);
     should.exist(a);
     should.exist(a.bn);
@@ -55,7 +55,7 @@ describe('PrivateKey', function() {
       scripthash: 0x08,
       MGVU1key: 0x0278b20e,
       MGVL1key: 0x0278ade4,
-      networkMagic: 0xf9beb4fe,
+      Nid: 0xf9beb4fe,
       port: 20001,
       dnsSeeds: [
         'localhost',
@@ -73,8 +73,8 @@ describe('PrivateKey', function() {
 
 
 
- Networks . add ( livenett ) ;
-  it('should create a new random testnet private key with empty data', function() {
+
+  it('should create a new random testnetmgv private key with empty data', function() {
     var a = new PrivateKey(null, Networks.testnet);
     should.exist(a);
     should.exist(a.bn);
@@ -176,7 +176,7 @@ describe('PrivateKey', function() {
        }).to.throw(TypeError);
     });
 
-    it('should create a livenet private key', function() {
+    it('should create a livenetmgv private key', function() {
       var privkey = new PrivateKey(BN.fromBuffer(buf), 'livenetmgv');
       privkey.toWIF().should.equal(wiflivenetmgv);
     });
@@ -208,7 +208,7 @@ describe('PrivateKey', function() {
       var json = JSON.stringify({
         bn: '96c132224121b509b7d0a16245e957d9192609c5637c6228311287b1be21627a',
         compressed: false,
-        network: 'livenet'
+        network: 'livenetmgv'
       });
       var key = PrivateKey.fromObject(JSON.parse(json));
       JSON.stringify(key).should.equal(json);
@@ -257,13 +257,13 @@ describe('PrivateKey', function() {
   });
 
   describe('#toAddress', function() {
-    it('should output this known livenet address correctly', function() {
+    it('should output this known livenetmgv address correctly', function() {
       var privkey = PrivateKey.fromWIF('L3T1s1TYP9oyhHpXgkyLoJFGniEgkv2Jhi138d7R2yJ9F4QdDU2m');
       var address = privkey.toAddress();
       address.toString().should.equal('1A6ut1tWnUq1SEQLMr4ttDh24wcbJ5o9TT');
     });
 
-    it('should output this known testnet address correctly', function() {
+    it('should output this known testnetmgv address correctly', function() {
       var privkey = PrivateKey.fromWIF('cR4qogdN9UxLZJXCNFNwDRRZNeLRWuds9TTSuLNweFVjiaE4gPaq');
       var address = privkey.toAddress();
       address.toString().should.equal('mtX8nPZZdJ8d3QNLRJ1oJTiEi26Sj6LQXS');
@@ -278,14 +278,14 @@ describe('PrivateKey', function() {
   });
 
   describe('#inspect', function() {
-    it('should output known livenet address for console', function() {
+    it('should output known livenetmgv address for console', function() {
       var privkey = PrivateKey.fromWIF('L3T1s1TYP9oyhHpXgkyLoJFGniEgkv2Jhi138d7R2yJ9F4QdDU2m');
       privkey.inspect().should.equal(
         '<PrivateKey: b9de6e778fe92aa7edb69395556f843f1dce0448350112e14906efc2a80fa61a, network: livenetmgv>'
       );
     });
 
-    it('should output known testnet address for console', function() {
+    it('should output known testnetmgv address for console', function() {
       var privkey = PrivateKey.fromWIF('cR4qogdN9UxLZJXCNFNwDRRZNeLRWuds9TTSuLNweFVjiaE4gPaq');
       privkey.inspect().should.equal(
         '<PrivateKey: 67fd2209ce4a95f6f1d421ab3fbea47ada13df11b73b30c4d9a9f78cc80651ac, network: testnetmgv>'
@@ -358,7 +358,7 @@ describe('PrivateKey', function() {
 
   describe('#fromWIF', function() {
 
-    it('should parse this compressed testnet address correctly', function() {
+    it('should parse this compressed testnetmgv address correctly', function() {
       var privkey = PrivateKey.fromWIF(wiflivenetmgv);
       privkey.toWIF().should.equal(wiflivenetmgv);
     });
@@ -367,7 +367,7 @@ describe('PrivateKey', function() {
 
   describe('#toWIF', function() {
 
-    it('should parse this compressed testnet address correctly', function() {
+    it('should parse this compressed testnetmgv address correctly', function() {
       var privkey = PrivateKey.fromWIF(wiftestnetmgv);
       privkey.toWIF().should.equal(wiftestnetmgv);
     });
@@ -376,7 +376,7 @@ describe('PrivateKey', function() {
 
   describe('#fromString', function() {
 
-    it('should parse this uncompressed testnet address correctly', function() {
+    it('should parse this uncompressed testnetmgv address correctly', function() {
       var privkey = PrivateKey.fromString(wiftestnetmgvUncompressed);
       privkey.toWIF().should.equal(wiftestnetmgvUncompressed);
     });
@@ -385,7 +385,7 @@ describe('PrivateKey', function() {
 
   describe('#toString', function() {
 
-    it('should parse this uncompressed livenet address correctly', function() {
+    it('should parse this uncompressed livenetmgv address correctly', function() {
       var privkey = PrivateKey.fromString(wiflivenetmgvUncompressed);
       privkey.toString().should.equal("96c132224121b509b7d0a16245e957d9192609c5637c6228311287b1be21627a");
     });
@@ -425,12 +425,12 @@ describe('PrivateKey', function() {
 
   });
 
-  it('creates an address as expected from WIF, livenet', function() {
+  it('creates an address as expected from WIF, livenetmgv', function() {
     var privkey = new PrivateKey('5J2NYGstJg7aJQEqNwYp4enG5BSfFdKXVTtBLvHicnRGD5kjxi6');
     privkey.publicKey.toAddress().toString().should.equal('135bwugFCmhmNU3SeCsJeTqvo5ViymgwZ9');
   });
 
-  it('creates an address as expected from WIF, testnet', function() {
+  it('creates an address as expected from WIF, testnetmgv', function() {
     var privkey = new PrivateKey('92VYMmwFLXRwXn5688edGxYYgMFsc3fUXYhGp17WocQhU6zG1kd');
     privkey.publicKey.toAddress().toString().should.equal('moiAvLUw16qgrwhFGo1eDnXHC2wPMYiv7Y');
   });

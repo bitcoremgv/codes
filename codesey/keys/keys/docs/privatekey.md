@@ -30,8 +30,8 @@ p2ksh publicKey M
 script h
 uncompressed
 
-bip32 publicKey
-bip32 privateKey     
+bip32 publicKey  MGVU1
+bip32 privateKey     MGVL
 
 ```javascript
 var publicKey = privateKey.toPublicKey();

@@ -12,6 +12,8 @@ var Address = bitcore.Address;
 var Script = bitcore.Script;
 var Networks = bitcore.Networks;
 
+
+
 var validbase58 = require('./data/bitcoind/base58_keys_valid.json');
 var invalidbase58 = require('./data/bitcoind/base58_keys_invalid.json');
 
@@ -29,13 +31,13 @@ describe('Address', function() {
 
   it('should throw an error because of bad network param', function() {
     (function() {
-      return new Address(PKHlivenet[0], 'main', 'pubkeyhash');
+      return new Address(PKHlivenetmgv[0], 'main', 'pubkeyhash');
     }).should.throw('Second argument must be "livenetmgv" or "testnetmgv".');
   });
 
   it('should throw an error because of bad type param', function() {
     (function() {
-      return new Address(PKHlivenet[0], 'livenetmgv', 'pubkey');
+      return new Address(PKHlivenetmgv[0], 'livenetmgv', 'pubkey');
     }).should.throw('Third argument must be "pubkeyhash" or "scripthash"');
   });
 
@@ -66,8 +68,8 @@ describe('Address', function() {
     });
   });
 
-  // livenet valid
-  var PKHlivenet = [
+  // livenetmgv valid
+  var PKHlivenetmgv = [
     '15vkcKf7gB23wLAnZLmbVuMiiVDc1Nm4a2',
     '1A6ut1tWnUq1SEQLMr4ttDh24wcbJ5o9TT',
     '1BpbpfLdY7oBS9gK7aDXgvMgr1DPvNhEB2',
@@ -75,8 +77,8 @@ describe('Address', function() {
     '    1Jz2yCRd5ST1p2gUqFB5wsSQfdm3jaFfg7   \t\n'
   ];
 
-  // livenet p2sh
-  var P2SHlivenet = [
+  // livenetmgv p2sh
+  var P2SHlivenetmgv = [
     '342ftSRCvFHfCeFFBuz4xwbeqnDw6BGUey',
     '33vt8ViH5jsr115AGkW6cEmEz9MpvJSwDk',
     '37Sp6Rv3y4kVd1nQ1JV5pfqXccHNyZm1x3',
@@ -84,15 +86,15 @@ describe('Address', function() {
     '\t \n3QjYXhTkvuj8qPaXHTTWb5wjXhdsLAAWVy \r'
   ];
 
-  // testnet p2sh
-  var P2SHtestnet = [
+  // testnetmgv p2sh
+  var P2SHtestnetmgv = [
     '2N7FuwuUuoTBrDFdrAZ9KxBmtqMLxce9i1C',
     '2NEWDzHWwY5ZZp8CQWbB7ouNMLqCia6YRda',
     '2MxgPqX1iThW3oZVk9KoFcE5M4JpiETssVN',
     '2NB72XtkjpnATMggui83aEtPawyyKvnbX2o'
   ];
 
-  //livenet bad checksums
+  //livenetmgv bad checksums
   var badChecksums = [
     '15vkcKf7gB23wLAnZLmbVuMiiVDc3nq4a2',
     '1A6ut1tWnUq1SEQLMr4ttDh24wcbj4w2TT',
@@ -100,7 +102,7 @@ describe('Address', function() {
     '1Jz2yCRd5ST1p2gUqFB5wsSQfdmEJaffg7'
   ];
 
-  //livenet non-base58
+  //livenetmgv non-base58
   var nonBase58 = [
     '15vkcKf7g#23wLAnZLmb$uMiiVDc3nq4a2',
     '1A601ttWnUq1SEQLMr4ttDh24wcbj4w2TT',
@@ -108,8 +110,8 @@ describe('Address', function() {
     '1Jz2yCRdOST1p2gUqFB5wsSQfdmEJaffg7'
   ];
 
-  //testnet valid
-  var PKHtestnet = [
+  //testnetmgv valid
+  var PKHtestnetmgv = [
     'n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X',
     'n45x3R2w2jaSC62BMa9MeJCd3TXxgvDEmm',
     'mursDVxqNQmmwWHACpM9VHwVVSfTddGsEM',
@@ -134,36 +136,36 @@ describe('Address', function() {
     });
 
     it('validates correctly the P2PKH test vector', function() {
-      for (var i = 0; i < PKHlivenet.length; i++) {
-        var error = Address.getValidationError(PKHlivenet[i]);
+      for (var i = 0; i < PKHlivenetmgv.length; i++) {
+        var error = Address.getValidationError(PKHlivenetmgv[i]);
         should.not.exist(error);
       }
     });
 
     it('validates correctly the P2SH test vector', function() {
-      for (var i = 0; i < P2SHlivenet.length; i++) {
-        var error = Address.getValidationError(P2SHlivenet[i]);
+      for (var i = 0; i < P2SHlivenetmgv.length; i++) {
+        var error = Address.getValidationError(P2SHlivenetmgv[i]);
         should.not.exist(error);
       }
     });
 
-    it('validates correctly the P2SH testnet test vector', function() {
-      for (var i = 0; i < P2SHtestnet.length; i++) {
-        var error = Address.getValidationError(P2SHtestnet[i], 'testnetmgv');
+    it('validates correctly the P2SH testnetmgv test vector', function() {
+      for (var i = 0; i < P2SHtestnetmgv.length; i++) {
+        var error = Address.getValidationError(P2SHtestnetmgv[i], 'testnetmgv');
         should.not.exist(error);
       }
     });
 
-    it('rejects correctly the P2PKH livenet test vector with "testnetmgv" parameter', function() {
-      for (var i = 0; i < PKHlivenet.length; i++) {
-        var error = Address.getValidationError(PKHlivenet[i], 'testnetmgv');
+    it('rejects correctly the P2PKH livenetmgv test vector with "testnetmgv" parameter', function() {
+      for (var i = 0; i < PKHlivenetmgv.length; i++) {
+        var error = Address.getValidationError(PKHlivenetmgv[i], 'testnetmgv');
         should.exist(error);
       }
     });
 
-    it('validates correctly the P2PKH livenet test vector with "livenetmgv" parameter', function() {
-      for (var i = 0; i < PKHlivenet.length; i++) {
-        var error = Address.getValidationError(PKHlivenet[i], 'livenetmgv');
+    it('validates correctly the P2PKH livenetmgv test vector with "livenetmgv" parameter', function() {
+      for (var i = 0; i < PKHlivenetmgv.length; i++) {
+        var error = Address.getValidationError(PKHlivenetmgv[i], 'livenetmgv');
         should.not.exist(error);
       }
     });
@@ -178,21 +180,21 @@ describe('Address', function() {
 
     it('should not validate on a network mismatch', function() {
       var error, i;
-      for (i = 0; i < PKHlivenet.length; i++) {
-        error = Address.getValidationError(PKHlivenet[i], 'testnetmgv', 'pubkeyhash');
+      for (i = 0; i < PKHlivenetmgv.length; i++) {
+        error = Address.getValidationError(PKHlivenetmgv[i], 'testnetmgv', 'pubkeyhash');
         should.exist(error);
         error.message.should.equal('Address has mismatched network type.');
       }
-      for (i = 0; i < PKHtestnet.length; i++) {
-        error = Address.getValidationError(PKHtestnet[i], 'livenetmgv', 'pubkeyhash');
+      for (i = 0; i < PKHtestnetmgv.length; i++) {
+        error = Address.getValidationError(PKHtestnetmgv[i], 'livenetmgv', 'pubkeyhash');
         should.exist(error);
         error.message.should.equal('Address has mismatched network type.');
       }
     });
 
     it('should not validate on a type mismatch', function() {
-      for (var i = 0; i < PKHlivenet.length; i++) {
-        var error = Address.getValidationError(PKHlivenet[i], 'livenetmgv', 'scripthash');
+      for (var i = 0; i < PKHlivenetmgv.length; i++) {
+        var error = Address.getValidationError(PKHlivenetmgv[i], 'livenetmgv', 'scripthash');
         should.exist(error);
         error.message.should.equal('Address has mismatched type.');
       }
@@ -206,9 +208,9 @@ describe('Address', function() {
       }
     });
 
-    it('testnet addresses are validated correctly', function() {
-      for (var i = 0; i < PKHtestnet.length; i++) {
-        var error = Address.getValidationError(PKHtestnet[i], 'testnetmgv');
+    it('testnetmgv addresses are validated correctly', function() {
+      for (var i = 0; i < PKHtestnetmgv.length; i++) {
+        var error = Address.getValidationError(PKHtestnetmgv[i], 'testnetmgv');
         should.not.exist(error);
       }
     });
@@ -358,7 +360,7 @@ describe('Address', function() {
         scripthash: 0x28,
         MGVU1key: 0x02e8de8f,
         MGVL1key: 0x02e8da54,
-        networkMagic: 0x0c110907,
+        Nid: 0x0c110907,
         port: 7333
       };
       var addressString = 'CX4WePxBwq1Y6u7VyMJfmmitE7GiTgC9aE';
@@ -415,23 +417,23 @@ describe('Address', function() {
       sliceString.should.equal(pubkeyhash.toString('hex'));
     });
 
-    it('should derive from this known address string testnet', function() {
-      var a = new Address(PKHtestnet[0], 'testnetmgv');
+    it('should derive from this known address string testnetmgv', function() {
+      var a = new Address(PKHtestnetmgv[0], 'testnetmgv');
       var b = new Address(a.toString());
-      b.toString().should.equal(PKHtestnet[0]);
+      b.toString().should.equal(PKHtestnetmgv[0]);
       b.network.should.equal(Networks.testnet);
     });
 
     it('should derive from this known address string livenetmgv scripthash', function() {
-      var a = new Address(P2SHlivenet[0], 'livenetmgv', 'scripthash');
+      var a = new Address(P2SHlivenetmgv[0], 'livenetmgv', 'scripthash');
       var b = new Address(a.toString());
-      b.toString().should.equal(P2SHlivenet[0]);
+      b.toString().should.equal(P2SHlivenetmgv[0]);
     });
 
-    it('should derive from this known address string testnet scripthash', function() {
-      var address = new Address(P2SHtestnet[0], 'testnetmgv', 'scripthash');
+    it('should derive from this known address string testnetmgv scripthash', function() {
+      var address = new Address(P2SHtestnetmgv[0], 'testnetmgv', 'scripthash');
       address = new Address(address.toString());
-      address.toString().should.equal(P2SHtestnet[0]);
+      address.toString().should.equal(P2SHtestnetmgv[0]);
     });
 
   });
@@ -468,18 +470,18 @@ describe('Address', function() {
     });
 
     it('scripthash address', function() {
-      var address = new Address(P2SHlivenet[0]);
-      address.toString().should.equal(P2SHlivenet[0]);
+      var address = new Address(P2SHlivenetmgv[0]);
+      address.toString().should.equal(P2SHlivenetmgv[0]);
     });
 
-    it('testnet scripthash address', function() {
-      var address = new Address(P2SHtestnet[0]);
-      address.toString().should.equal(P2SHtestnet[0]);
+    it('testnetmgv scripthash address', function() {
+      var address = new Address(P2SHtestnetmgv[0]);
+      address.toString().should.equal(P2SHtestnetmgv[0]);
     });
 
-    it('testnet pubkeyhash address', function() {
-      var address = new Address(PKHtestnet[0]);
-      address.toString().should.equal(PKHtestnet[0]);
+    it('testnetmgv pubkeyhash address', function() {
+      var address = new Address(PKHtestnetmgv[0]);
+      address.toString().should.equal(PKHtestnetmgv[0]);
     });
 
   });
@@ -494,16 +496,16 @@ describe('Address', function() {
 
   describe('questions about the address', function() {
     it('should detect a P2SH address', function() {
-      new Address(P2SHlivenet[0]).isPayToScriptHash().should.equal(true);
-      new Address(P2SHlivenet[0]).isPayToPublicKeyHash().should.equal(false);
-      new Address(P2SHtestnet[0]).isPayToScriptHash().should.equal(true);
-      new Address(P2SHtestnet[0]).isPayToPublicKeyHash().should.equal(false);
+      new Address(P2SHlivenetmgv[0]).isPayToScriptHash().should.equal(true);
+      new Address(P2SHlivenetmgv[0]).isPayToPublicKeyHash().should.equal(false);
+      new Address(P2SHtestnetmgv[0]).isPayToScriptHash().should.equal(true);
+      new Address(P2SHtestnetmgv[0]).isPayToPublicKeyHash().should.equal(false);
     });
     it('should detect a Pay To PubkeyHash address', function() {
-      new Address(PKHlivenet[0]).isPayToPublicKeyHash().should.equal(true);
-      new Address(PKHlivenet[0]).isPayToScriptHash().should.equal(false);
-      new Address(PKHtestnet[0]).isPayToPublicKeyHash().should.equal(true);
-      new Address(PKHtestnet[0]).isPayToScriptHash().should.equal(false);
+      new Address(PKHlivenetmgv[0]).isPayToPublicKeyHash().should.equal(true);
+      new Address(PKHlivenetmgv[0]).isPayToScriptHash().should.equal(false);
+      new Address(PKHtestnetmgv[0]).isPayToPublicKeyHash().should.equal(true);
+      new Address(PKHtestnetmgv[0]).isPayToScriptHash().should.equal(false);
     });
   });
 
@@ -513,8 +515,8 @@ describe('Address', function() {
     }).to.throw(TypeError);
   });
   it('can roundtrip from/to a object', function() {
-    var address = new Address(P2SHlivenet[0]);
-    expect(new Address(address.toObject()).toString()).to.equal(P2SHlivenet[0]);
+    var address = new Address(P2SHlivenetmgv[0]);
+    expect(new Address(address.toObject()).toString()).to.equal(P2SHlivenetmgv[0]);
   });
 
   it('will use the default network for an object', function() {
@@ -540,7 +542,7 @@ describe('Address', function() {
       address.toString().should.equal('3FtqPRirhPvrf7mVUSkygyZ5UuoAYrTW3y');
     });
 
-    it('works on testnet also', function() {
+    it('works on testnetmgv also', function() {
       var address = Address.createMultisig(publics, 2, Networks.testnet);
       address.toString().should.equal('2N7T3TAetJrSCruQ39aNrJvYLhG1LJosujf');
     });

@@ -6,7 +6,7 @@ var bitcore = require ('..') ;
  /*
 
 
-var testnett
+var testnetmgvt
 fs . open ('../test', '   ' , ( )
 Networks . ( (
 var test   fs. readFileSync ( '../test' ,

@@ -5,19 +5,19 @@ The `Network` namespace has a function, `get(...)` that returns an instance of a
 
 ## Regtest
 
-The regtest network is useful for development as it's possible to programmatically and instantly generate blocks for testing. It's currently supported as a variation of testnet. Here is an example of how to use regtest with the Bitcore Library:
+The regtest network is useful for development as it s possible to programmatically and instantly generate blocks for testing. It's currently supported as a variation of testnet. Here is an example of how to use regtest with the Bitcore Library:
 
 ```js
 // Standard testnet
-> bitcore.Networks.testnet.networkMagic;
-<Buffer 11 42 10 00>
+> bitcore.Networks.testnet.Nid;
+<Buffer 11 41 10 00>
 ```
 
 ```js
 // Enabling testnet to use the regtest port and magicNumber
 > bitcore.Networks.enableRegtest();
-> bitcore.Networks.testnet.networkMagic;
-<Buffer fa bf b5 da>
+> bitcore.Networks.testnet.Nid;
+<Buffer 12 41 10 00>
 ```
 
 ## Setting the Default Network
@@ -33,9 +33,9 @@ var livenetmgv = new Network();
 _.extend(livenet, {
   name: 'livenetmgv',
   alias: 'mainnet',
-  pubkeyhash: 0x32  ,  50
-  privatekey: 0x6e  ,  110
-  scripthash: 0x64  ,  100 h
+  pubkeyhash: 20  ,
+  privatekey: 44  ,
+  scripthash: 40  ,
   MGVU1key:  0x32264644    ,MGVU1
   MGVL1key: 0x32264630    50 38 70 48 ,MGVL1
   port: 11421
@@ -45,7 +45,7 @@ var testnet = new Network();
 _.extend(testnet, {
   name: 'testnetmgv',
   alias: 'regtest',
-  pubkeyhash: 0x44  ,U 68
+  pubkeyhash: 27  ,     
   privatekey: 0x82  ,u 130
   scripthash: 0x00  ,
   MGVU1key: 0x82827F  ,uutm 130 130 127 110

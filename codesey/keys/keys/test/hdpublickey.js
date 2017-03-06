@@ -17,7 +17,7 @@ var Networks = bitcore.Networks;
 
 var MGVL1key = 'xprv9s21ZrQH143K3QTDL4LXw2F7HEK3wJUD2nW2nRk4stbPy6cq3jPPqjiChkVvvNKmPGJxWUtg6LnF5kejMRNNU3TGtRBeJgk33yuGBxrMPHi';
 var MGVU1key = 'xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESFjqJoCu1Rupje8YtGqsefD265TMg7usUDFdp6W1EGMcet8';
-var MGVU1keytestnet = 'tpubD6NzVbkrYhZ4WZaiWHz59q5EQ61bd6dUYfU4ggRWAtNAyyYRNWT6ktJ7UHJEXURvTfTfskFQmK7Ff4FRkiRN5wQH8nkGAb6aKB4Yyeqsw5m';
+var MGVU1keytestnetmgv = 'tpubD6NzVbkrYhZ4WZaiWHz59q5EQ61bd6dUYfU4ggRWAtNAyyYRNWT6ktJ7UHJEXURvTfTfskFQmK7Ff4FRkiRN5wQH8nkGAb6aKB4Yyeqsw5m';
 var json = '{"network":"livenetmgv","depth":0,"fingerPrint":876747070,"parentFingerPrint":0,"childIndex":0,"chainCode":"873dff81c02f525623fd1fe5167eac3a55a049de3d314bb42ee227ffed37d508","publicKey":"0339a36013301597daef41fbe593a02cc513d0b55527ec2df1050e2e8ff49c85c2","checksum":-1421395167,"MGVU1key":"xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESFjqJoCu1Rupje8YtGqsefD265TMg7usUDFdp6W1EGMcet8"}';
 var derived_0_1_200000 = 'xpub6BqyndF6rkBNTV6LXwiY8Pco8aqctqq7tGEUdA8fmGDTnDJphn2fmxr3eM8Lm3m8TrNUsLbEjHvpa3adBU18YpEx4tp2Zp6nqax3mQkudhX';
 
@@ -141,11 +141,11 @@ describe('HDPublicKey interface', function() {
   });
 
   it('publicKey property matches network', function() {
-    var livenet = new HDPublicKey(MGVU1key);
-    var testnet = new HDPublicKey(MGVU1keytestnet);
+    var livenetmgv = new HDPublicKey(MGVU1key);
+    var testnetmgv = new HDPublicKey(MGVU1keytestnetmgv);
 
-    livenet.publicKey.network.should.equal(Networks.livenet);
-    testnet.publicKey.network.should.equal(Networks.testnet);
+    livenetmgv.publicKey.network.should.equal(Networks.livenet);
+    testnetmgv.publicKey.network.should.equal(Networks.testnet);
   });
 
   it('inspect() displays correctly', function() {

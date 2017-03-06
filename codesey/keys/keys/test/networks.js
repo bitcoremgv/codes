@@ -5,6 +5,7 @@ var should = require('chai').should();
 var bitcore = require('..');
 var networks = bitcore.Networks;
 
+
 describe('Networks', function() {
 
   var customnet;
@@ -17,13 +18,13 @@ describe('Networks', function() {
 
   it('will enable/disable regtest Network', function() {
     networks.enableRegtest();
-    networks.testnet.networkMagic.should.deep.equal(new Buffer('12411000', 'hex'));
+    networks.testnet.Nid.should.deep.equal(new Buffer('12411000', 'hex'));
     networks.testnet.port.should.equal(12411);
     networks.testnet.dnsSeeds.should.deep.equal([]);
     networks.testnet.regtestEnabled.should.equal(true);
 
     networks.disableRegtest();
-    networks.testnet.networkMagic.should.deep.equal(new Buffer('11411000', 'hex'));
+    networks.testnet.Nid.should.deep.equal(new Buffer('11411000', 'hex'));
     networks.testnet.port.should.equal(11411);
     networks.testnet.dnsSeeds.should.deep.equal([
 
@@ -51,7 +52,7 @@ describe('Networks', function() {
       scripthash: 0x08,
       MGVU1key: 0x0278b20e,
       MGVL1key: 0x0278ade4,
-      networkMagic: 0xe7beb4d4,
+      Nid: 0xe7beb4d4,
       port: 20001,
       dnsSeeds: [
         'localhost',
@@ -61,7 +62,7 @@ describe('Networks', function() {
     networks.add(custom);
     customnet = networks.get('customnet');
     for (var key in custom) {
-      if (key !== 'networkMagic') {
+      if (key !== 'Nid') {
         customnet[key].should.equal(custom[key]);
       } else {
         var expected = new Buffer('e7beb4d4', 'hex');
@@ -84,7 +85,7 @@ describe('Networks', function() {
       scripthash: 0x11,
       MGVU1key: 0x0278b20f,
       MGVL1key: 0x0278ade5,
-      networkMagic: 0xe7beb4d5,
+      Nid: 0xe7beb4d5,
       port: 20008,
       dnsSeeds: [
         'somenet.localhost'
@@ -99,7 +100,7 @@ describe('Networks', function() {
   var constants = ['name', 'alias', 'pubkeyhash', 'scripthash', 'MGVU1key', 'MGVL1key'];
 
   constants.forEach(function(key){
-    it('should have constant '+key+' for livenet and testnet', function(){
+    it('should have constant '+key+' for livenetmgv and testnetmgv', function(){
       networks.testnet.hasOwnProperty(key).should.equal(true);
       networks.livenet.hasOwnProperty(key).should.equal(true);
     });

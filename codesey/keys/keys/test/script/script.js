@@ -658,7 +658,7 @@ describe('Script', function() {
     }
   });
   describe('#buildPublicKeyHashOut', function() {
-    it('should create script from livenet address', function() {
+    it('should create script from livenetmgv address', function() {
       var address = Address.fromString('1NaTVwXDDUJaXDQajoa9MqHhz4uTxtgK14');
       var s = Script.buildPublicKeyHashOut(address);
       should.exist(s);
@@ -666,7 +666,7 @@ describe('Script', function() {
       s.isPublicKeyHashOut().should.equal(true);
       s.toAddress().toString().should.equal('1NaTVwXDDUJaXDQajoa9MqHhz4uTxtgK14');
     });
-    it('should create script from testnet address', function() {
+    it('should create script from testnetmgv address', function() {
       var address = Address.fromString('mxRN6AQJaDi5R6KmvMaEmZGe3n5ScV9u33');
       var s = Script.buildPublicKeyHashOut(address);
       should.exist(s);
@@ -811,8 +811,8 @@ describe('Script', function() {
   });
 
   describe('getData returns associated data', function() {
-    it('works with this testnet transaction', function() {
-      // testnet block: 00000000a36400fc06440512354515964bc36ecb0020bd0b0fd48ae201965f54
+    it('works with this testnetmgv transaction', function() {
+      // testnetmgv block: 00000000a36400fc06440512354515964bc36ecb0020bd0b0fd48ae201965f54
       // txhash: e362e21ff1d2ef78379d401d89b42ce3e0ce3e245f74b1f4cb624a8baa5d53ad (output 0);
       var script = Script.fromBuffer(new Buffer('6a', 'hex'));
       var dataout = script.isDataOut();
@@ -842,13 +842,13 @@ describe('Script', function() {
 
   describe('toAddress', function() {
     var pubkey = new PublicKey('027ffeb8c7795d529ee9cd96512d472cefe398a0597623438ac5d066a64af50072');
-    var liveAddress = pubkey.toAddress(Networks.livenet);
-    var testAddress = pubkey.toAddress(Networks.testnet);
+    var liveAddress = pubkey.toAddress(Networks.livenetmgv);
+    var testAddress = pubkey.toAddress(Networks.testnetmgv);
 
     it('priorize the network argument', function() {
       var script = new Script(liveAddress);
-      script.toAddress(Networks.testnet).toString().should.equal(testAddress.toString());
-      script.toAddress(Networks.testnet).network.should.equal(Networks.testnet);
+      script.toAddress(Networks.testnetmgv).toString().should.equal(testAddress.toString());
+      script.toAddress(Networks.testnetmgv).network.should.equal(Networks.testnetmgv);
     });
     it('use the inherited network', function() {
       var script = new Script(liveAddress);
@@ -874,7 +874,7 @@ describe('Script', function() {
       script.toAddress().toString().should.equal(stringAddress);
     });
     it('fails if content is not recognized', function() {
-      Script().toAddress(Networks.livenet).should.equal(false);
+      Script().toAddress(Networks.livenetmgv).should.equal(false);
     });
 
     it('works for p2pkh output', function() {
